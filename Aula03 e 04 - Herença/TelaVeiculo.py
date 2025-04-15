@@ -8,12 +8,12 @@ class TelaVeiculo(QMainWindow):
         super().__init__()
 
         self.setWindowTitle(titulo)
-        self.setGeometry(100, 150, 303, 300) #setGeometry(x, y, largura, altura)
+        self.setGeometry(100, 150, 300, 150) #setGeometry(x, y, largura, altura)
         self.layout = QVBoxLayout()
 
         self.definirLayout()
         #botão
-        self.btnSalvar = QPushButton("salvar", self) #o botão de salvar recebrá a classe de pyqt5 QPushButton com o "salvar, que é minha função definida no código abaixo"
+        self.btnSalvar = QPushButton("Salvar", self) #o botão de salvar recebrá a classe de pyqt5 QPushButton com o "salvar, que é minha função definida no código abaixo"
         self.btnSalvar.clicked.connect(self.salvar)#programei para quando este botão for clicado ele irá conectar à função salvar dentro do próprio método construtor.
         self.layout.addWidget(self.btnSalvar)#estou afirmando que o layout receberá um widget, que é o botão que criei acima.
 
@@ -38,5 +38,5 @@ class TelaVeiculo(QMainWindow):
         ano = self.txtAno.text() #mesma lógica.
         if(ano != ""): #se o ano não for vazio,
             ano = int(ano) #variável ano recebe o ano como um número inteiro,
-        veiculo = Veiculos(modelo, ano) #variável veículo recebe a classe Veiculos com as variáveis definidas na função (modelo, ano) que são os parâsmetros que ela normalmente recebe.
+        veiculo = Veiculo(modelo, ano) #variável veículo recebe a classe Veiculos com as variáveis definidas na função (modelo, ano) que são os parâsmetros que ela normalmente recebe.
         QMessageBox.information(self, "Veículo salvo", str(veiculo) )
