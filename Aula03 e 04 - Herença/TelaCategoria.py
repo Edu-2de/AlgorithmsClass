@@ -7,7 +7,7 @@ class TelaCategoria (QMainWindow):
 
     def __init__(self, titulo = "Tela Veículo", categorias = [], telaCarro = None):
         self.listaCategorias = categorias
-        self.telaCategoria = telaCarro
+        self.telaCarro = telaCarro
 
         super().__init__()
 
@@ -39,5 +39,5 @@ class TelaCategoria (QMainWindow):
         if(nome != ""): 
             cat = Categoria( nome )
             self.listaCategorias.append(cat)
-            # self.telaCarro.carregarCategorias()
+            self.telaCarro.carregarCategorias()
         QMessageBox.information(self, "Categoria salva", str(cat) )

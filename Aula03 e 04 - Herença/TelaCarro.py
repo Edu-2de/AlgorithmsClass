@@ -5,8 +5,9 @@ from TelaVeiculo import TelaVeiculo
 from Carro import Carro
 
 class TelaCarro (TelaVeiculo):
-    def __init__(self, titulo="Tela Carro", categorias = []):
+    def __init__(self, titulo="Tela Carro", categorias = [], telaCat = None):
         self.listaCategorias = categorias
+        self.telaCategoria = telaCat
         super().__init__(titulo) #função super() afirma que o init da superclasse será a mesma da declarada de quem ela herda. Neste caso, a classe TelaCarro recebe os mesmos parâmateros e funções de TelaVeiculo
         self.setGeometry(450, 150, 300, 300)
 
@@ -21,6 +22,15 @@ class TelaCarro (TelaVeiculo):
         self.layout.addWiget(self.lblCategoria)
 
         self.cmbCategoria = QComboBox(self)
+        self.carregarCategorias()
+        self.layout.addWidget( self.cmbCategoria )
+
+        self.btnAbrirTelaCat = QPushButton( "Add Categoria", self)
+        self.btnAbrirTelaCat.clicked.connect( self.abrirTelaCategoria ) 
+        self.layout.addWidget( self.btnAbrirTelaCat )
+
+    def abrirTelaCategoria(self):
+        self.telaCategoria.show()
 
     def carregarCategorias(self):
         self.cmbCategoria.addItem( "Selecione..", None )
