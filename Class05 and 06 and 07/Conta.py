@@ -5,39 +5,49 @@ class Conta:
 
     def __init__(self):
         self.__saldo = 0.0
-
-#Methods Get and Set
+# Métodos GET e SET
     def getSaldo(self):
-        if not Conta.logado:
+        if self.logado:
+            return self.__saldo
+        else: 
             return None
-        return self.__saldo
 
     def setSaldo(self, valor):
         if valor > self.__saldo:
             self.__saldo = valor
 
-
-    def __descontarTarifa(self):
+    def __descontarTarifa( self ):
         self.__saldo -= self.tarifa
 
     def sacar(self, valor):
         if self.__saldo >= valor + self.tarifa:
             self.__saldo -= valor
             self.__descontarTarifa()
-            print("Saque Realizado!")
-        return None
+            print("Saque realizado")
+        else:
+            print( "Saldo insuficiente" )
+
+    
 
 
 
+#Property
 
-#Proprety
     @property
     def saldo(self):
-        if not Conta.logado:
+        if self.logado:
+            return self.__saldo
+        else: 
             return None
-        return self.__saldo
 
     @saldo.setter
-    def saldo(self, valor):
+    def saldo(self, valor ):
         if valor > self.__saldo:
             self.__saldo = valor
+
+
+
+
+
+
+    
