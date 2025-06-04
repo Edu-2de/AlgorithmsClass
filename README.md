@@ -16,6 +16,3 @@ The main goal of this repository is to reinforce concepts learned in class and p
 ## Usage
 
 Feel free to explore, use, and adapt any of the code or exercises for your own learning and projects.
-
----
-```
