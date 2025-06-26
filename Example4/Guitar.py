@@ -1,3 +1,4 @@
+from turtle import color
 from Type import Type
 from Color import Color
 
@@ -14,10 +15,12 @@ class Guitar:
       def add_color(self, color: Color):
             if isinstance(color, Color):
                   self.color.append(color)
+            if color not in self.color:
+                  self.color.append(color)
             else:
-                  raise TypeError("Color must be an instance of Color class")
+                  raise TypeError("Color must be an instance of Color class or already added to this guitar")
       
-      
+
 
       def __str__(self):
             return f"Guitar: {self.brand} {self.model}, Year: {self.year}, Price: R${self.price:.2f}, Type: {self.type}, Color: {self.color}"
