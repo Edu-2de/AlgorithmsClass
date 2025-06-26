@@ -1,4 +1,5 @@
 from Type import Type
+from Color import Color
 
 class Guitar:
       def __init__(self, brand:str = None, model: str = None, year:int = 0, price:float = 0.0):
@@ -6,6 +7,17 @@ class Guitar:
             self.model = model
             self.year = year
             self.price = price
+            self.type = Type()
+            self.color = []
+
+
+      def add_color(self, color: Color):
+            if isinstance(color, Color):
+                  self.color.append(color)
+            else:
+                  raise TypeError("Color must be an instance of Color class")
+      
+      
 
       def __str__(self):
-            return f"Guitar: {self.brand} {self.model}, Year: {self.year}, Price: R${self.price:.2f}"
+            return f"Guitar: {self.brand} {self.model}, Year: {self.year}, Price: R${self.price:.2f}, Type: {self.type}, Color: {self.color}"
