@@ -19,6 +19,12 @@ class Guitar:
                   self.color.append(color)
             else:
                   raise TypeError("Color must be an instance of Color class or already added to this guitar")
+            
+      def remove_color(self, color: Color):
+            if color in self.color:
+                  self.color.remove(color)
+            else:
+                  raise TypeError("This color is not associated with this guitar")
       
 
 
