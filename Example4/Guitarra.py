@@ -4,3 +4,6 @@ class Guitarra:
             self.model = model
             self.year = year
             self.price = price
+
+      def __str__(self):
+            return f"Guitarra: {self.brand} {self.model}, Ano: {self.year}, Preço: R${self.price:.2f}"
