@@ -30,6 +30,17 @@ class Automobile(Vehicle):
             super().print_info()
             print(f"Engine Power: {self.engine_power}")
 
+class Bicycle(Vehicle):
+      def __init__(self, make: str = None, model: str = None, speed: float = 0.0, wheel_count: int = 4, number_of_gears: int = 1, luggage_rack: bool = False):
+            super().__init__(make, model, speed, wheel_count)
+            self.number_of_gears = number_of_gears
+            self.luggage_rack = luggage_rack
+
+      def print_info(self):
+            super().print_info()
+            print(f"Number of Gears: {self.number_of_gears}")
+            print(f"Luggage Rack: {self.luggage_rack}")
+
 class Car(Automobile):
       def __init__(self, make: str = None, model: str = None, speed: float = 0.0, wheel_count: int = 4, engine_power: float = 0.0, number_of_doors: int = 4):
             super().__init__(make, model, speed, wheel_count, engine_power)
