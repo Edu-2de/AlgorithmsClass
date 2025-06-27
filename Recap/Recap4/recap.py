@@ -13,13 +13,13 @@ class Vehicle:
 
       def accelerate(self, increment: float):
             self.speed += increment
-            return self.speed
-      
+            return print(self.speed)
+
       def brake(self, decrement: float):
             self.speed -= decrement
             if self.speed <= 0:
                   self.speed = 0
-            return self.speed
+            return print(self.speed)
 
 class Automobile(Vehicle):
       def __init__(self, make: str = None, model: str = None, speed: float = 0.0, wheel_count: int = 4, engine_power: float = 0.0):
@@ -61,20 +61,38 @@ class Motorcycle(Automobile):
 
 vehicle1 = Vehicle("Generic", "Model X", 60.0)
 vehicle1.print_info()
-vehicle1.accelerate(20.0)
-vehicle1.brake(10.0)
 print("\n")
+vehicle1.accelerate(20.0)
+print("\n")
+vehicle1.brake(10.0)
+
+print("\n")
+print("\n")
+
+
 car1 = Car("Toyota", "Corolla", 80.0, 4, 150.0, 4)
 car1.print_info()
+print("\n")
 car1.accelerate(30.0)
+print("\n")
 car1.brake(20.0)
 print("\n")
+print("\n")
+
+
 motorcycle1 = Motorcycle("Honda", "CB500", 100.0, 2, 50.0)
 motorcycle1.print_info()
+print("\n")
 motorcycle1.accelerate(25.0)
+print("\n")
 motorcycle1.brake(15.0)
 print("\n")
+print("\n")
+
+
 bicycle1 = Bicycle("Giant", "Escape 3", 15.0, 2, 7, True)
 bicycle1.print_info()
+print("\n")
 bicycle1.accelerate(5.0)
+print("\n")
 bicycle1.brake(3.0)
