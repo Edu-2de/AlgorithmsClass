@@ -37,3 +37,27 @@ class Legal(Person):
       
       def issue_Note(self, note: str) -> None:
             print(f"Issued Note: {note} for CNPJ: {self.__cnpj}")
+
+
+
+person1 = Person(1, "Alice", "123 Main St", "123-456-7890")
+person2 = Physic(2, "Bob", "456 Elm St", "987-654-3210", "123.456.789-00", 30, 70.0, 1.75)
+person3 = Legal(3, "Charlie", "789 Oak St", "555-555-5555", "12.345.678/0001-90", "1234567890", 50)
+
+print(person1.print_name())
+print(person2.print_name())
+print(person3.print_name())
+
+print(person2.print_cpf())
+print(f"BMI: {person2.calculate_bmi():.2f}")
+
+print(person3.print_cnpj())
+person3.issue_Note("Invoice #12345")
+
+#person1.__print_phone()  # This will raise an AttributeError since __print_phone is private
+#person2.__print_phone()  # This will also raise an AttributeError
+#person3.__print_phone()  # This will also raise an AttributeError since __print_phone is private
+
+# The above code demonstrates the use of private and protected attributes and methods in Python.
+# The Person class has a private method __print_phone that cannot be accessed directly from outside the class.
+# The Physic and Legal subclasses inherit from Person and can access the protected attribute _address, but not the private attributes or methods.
