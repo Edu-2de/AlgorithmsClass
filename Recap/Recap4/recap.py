@@ -1,39 +1,48 @@
 class Vehicle:
-      def __init__(self, make: str, model: str, year: int):
+      def __init__(self, make: str = None, model: str = None, speed: float = 0.0, wheel_count: int = 4):
             self.make = make
             self.model = model
-            self.year = year
+            self.speed = speed
+            self.wheel_count = wheel_count
 
       def print_info(self):
             print(f"Make: {self.make}")
             print(f"Model: {self.model}")
-            print(f"Year: {self.year}")
+            print(f"Speed: {self.speed}")
+            print(f"Wheel Count: {self.wheel_count}")
 
-class Car(Vehicle):
-      def __init__(self, make: str, model: str, year: int, doors: int):
-            super().__init__(make, model, year)
-            self.doors = doors
+      def accelerate(self, increment: float):
+            self.speed += increment
+            return self.speed
+      
+      def brake(self, decrement: float):
+            self.speed -= decrement
+            if self.speed <= 0:
+                  self.speed = 0
+            return self.speed
+
+class Automobile(Vehicle):
+      def __init__(self, make: str = None, model: str = None, speed: float = 0.0, wheel_count: int = 4, engine_power: float = 0.0):
+            super().__init__(make, model, speed, wheel_count)
+            self.engine_power = engine_power
 
       def print_info(self):
             super().print_info()
-            print(f"Doors: {self.doors}")
+            print(f"Engine Power: {self.engine_power}")
 
-class Motorcycle(Vehicle):
-      def __init__(self, make: str, model: str, year: int, cc: int):
-            super().__init__(make, model, year)
-            self.cc = cc
+class Car(Automobile):
+      def __init__(self, make: str = None, model: str = None, speed: float = 0.0, wheel_count: int = 4, engine_power: float = 0.0, number_of_doors: int = 4):
+            super().__init__(make, model, speed, wheel_count, engine_power)
+            self.number_of_doors = number_of_doors
 
       def print_info(self):
             super().print_info()
-            print(f"CC: {self.cc}")
+            print(f"Number of Doors: {self.number_of_doors}")
 
-vehicle = Vehicle("Generic", "Model", 2020)
-car = Car("Toyota", "Camry", 2021, 4)
-motorcycle = Motorcycle("Yamaha", "MT-07", 2022, 689)
+class Motorcycle(Automobile):
+      def __init__(self, make: str = None, model: str = None, speed: float = 0.0, wheel_count: int = 2, engine_power: float = 0.0):
+            super().__init__(make, model, speed, wheel_count, engine_power)
 
-vehicle.print_info()
-print()
-car.print_info()
-print()
-motorcycle.print_info()
-print()
+      def print_info(self):
+            super().print_info()
+            print("This is a motorcycle.")
