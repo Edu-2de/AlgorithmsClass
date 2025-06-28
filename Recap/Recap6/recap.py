@@ -8,3 +8,7 @@ class Bank_account(ABC):
 class Current_account(Bank_account):
       def display_values(self):
             print("Current Account")
+
+class Savings_account(Bank_account):
+      def display_values(self):
+            print("Savings Account")
