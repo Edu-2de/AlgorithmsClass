@@ -16,3 +16,27 @@ class ListaEncadeada:
                   while atual.proximo:
                         atual = atual.proximo
                   atual.proximo = novo_no
+
+      def exibir(self):
+            atual = self.inicio
+            while atual:
+                  print(atual.valor, end=" -> ")
+                  atual = atual.proximo
+            print("None")
+
+      def remover(self, valor):
+            if not self.inicio:
+                  return
+
+            if self.inicio.valor == valor:
+                  self.inicio = self.inicio.proximo
+                  return
+
+            atual = self.inicio
+            while atual.proximo and atual.proximo.valor != valor:
+                  atual = atual.proximo
+
+            if atual.proximo:
+                  atual.proximo = atual.proximo.proximo
+
+      
