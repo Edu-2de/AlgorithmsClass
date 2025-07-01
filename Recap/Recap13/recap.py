@@ -91,7 +91,6 @@ def menu():
                     print('Ja temos uma conta com esse titular')
                     existe = True
                     break
-            
             if existe == False:
                 x = Conta(titular, senha)
                 contas.append(x)
