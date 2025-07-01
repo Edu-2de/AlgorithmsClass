@@ -33,11 +33,27 @@ class Carro(Veiculo):
     
 
 class Bicicleta(Veiculo):
-    def __init__(self, id:int = 0, marca:str = None, modelo:str = None, _marchas:int = 0, _marcha_atual:int = 0):
+    def __init__(self, id:int = 0, marca:str = None, modelo:str = None, _marchas:int = 0, marcha_atual:int = 0, velocidade_atual:float = 0.0):
         super().__init__(id, marca, modelo)
         self._marchas = _marchas,
-        self._marcha_atual = 0
+        self.marcha_atual = marcha_atual,
+        self.velocidade_atual = velocidade_atual
 
     def __str__(self):
         return f"Bicicleta de {self._marchas} foi cadastrada com sucesso"
+    
+    def acelerar(self, velocidade:float):
+        if velocidade < self.velocidade_atual and velocidade > 0.0:
+            self.marcha_atual -= 1
+            self.velocidade_atual = velocidade
+            return(f"A bicicleta diminuiu uma mrcha e agora esta com a veolocidade de: {self.velocidade_atual} km")
+        elif velocidade > self.velocidade_atual:
+            self.marcha_atual += 1
+            self.velocidade_atual = velocidade
+            return(f"A bicicleta aumentou uma mrcha e agora esta com a veolocidade de: {self.velocidade_atual} km")
+        else:
+            return(f"A bicicleta já está parada, voce nao pode diminuir a marcha")
+
+
+
 
