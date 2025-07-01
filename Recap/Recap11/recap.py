@@ -18,7 +18,7 @@ class Pessoa:
         self.cpf = cpf
 
     def __str__(self):
-        return print(f"Pessoa do id: {self.id}, nome: {self.nome} e cpf: {self.cpf} foi cadastrada com sucesso")
+        return f"Pessoa do id: {self.id}, nome: {self.nome} e cpf: {self.cpf} foi cadastrada com sucesso"
 
 
 
