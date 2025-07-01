@@ -114,3 +114,13 @@ vei3.trocar_numero_marchas(8)
 vei3.acelerar(2.5)
 vei3.acelerar(1.5)
 vei3.acelerar(0.2)
+vei3.trocar_numero_marchas(3)
+vei3.acelerar(1.5)
+vei3.acelerar(2.5)
+vei3.acelerar(3.5)
+vei3.acelerar(4.5)
+vei3.acelerar(5.5)
+
+
+
+
