@@ -17,7 +17,7 @@ class Conta:
     
     def sacar(self, valor:float, senha:str):
         chances = 3
-        while chances :
+        while chances:
             try:
                 if senha == self.senha:
                     if valor <= self._saldo:
@@ -26,6 +26,7 @@ class Conta:
                         break
                     else:
                         print(f"Voce nao tem saldo suficiente para sacar essa quantia")
+                        break
                 else:
                     chances -= 1
                     print(f"Voce digitou a senha errada, tente novamente, voce ainda tem {chances} chances restantes")
@@ -33,3 +34,12 @@ class Conta:
             except:
                 print(f"Voce perdeu todas as tentativas tente novamente")
                 break
+
+    def depositar(self, valor:float):
+        if valor > 0.0:
+            self._saldo += valor
+            print(f"Voce acaba de depositar {valor} na sua conta, agora voce tem {self._saldo} de saldo")
+        else:
+            print("Voce so pode depositar uma quantia que seja maior que zero")
+
+    
