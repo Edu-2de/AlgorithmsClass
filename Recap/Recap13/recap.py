@@ -98,4 +98,8 @@ def menu():
         elif resposta == '2':
             num_conta = str(input("Digite o numero da sua conta: ")) 
             senha = str(input("Digite sua senha: "))
+            chances = 3:
+            while chances:
+                try:
+                    if senha == 
 
