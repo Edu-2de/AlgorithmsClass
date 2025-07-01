@@ -12,13 +12,17 @@ Construa um arquivo main para testar a construção de um aluno
 '''
 
 class Pessoa:
-    def __init__(self, id:int = 0, nome:str = None, cpf:str = None):
+    def __init__(self, id:int = 0, nome:str = None, _cpf:str = None):
         self.id = id + 1,
         self.nome = nome,
-        self.cpf = cpf
+        self._cpf = _cpf
 
     def __str__(self):
-        return f"Pessoa do id: {self.id}, nome: {self.nome} e cpf: {self.cpf} foi cadastrada com sucesso"
+        return f"Pessoa do id: {self.id}, nome: {self.nome} e de cpf: {self._cpf} foi cadastrada com sucesso"
+    
+class Aluno(Pessoa):
+    def __init__(self, id:int = 0, nome:str = None, _cpf:str = None, __matricula:str = None):
+        
 
 
 
