@@ -16,6 +16,7 @@ class Conta:
         return f"A conta: {self.__numero_conta} do titular: {self.titular} foi criada com sucesso"
     
     def sacar(self, valor:float, senha:str):
+        chances = 3
         if senha == self.senha:
             if valor <= self._saldo:
                 self._saldo -= valor
