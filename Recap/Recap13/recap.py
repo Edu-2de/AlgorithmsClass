@@ -46,7 +46,25 @@ class Conta:
     def get_numero_conta(self):
         print(self.__numero_conta)
 
-    def set_numero_conta(self):
-        
+    def set_numero_conta(self, valor:str, senha:str):
+        chances = 3
+        while chances:
+            try:
+                if senha == self.senha:
+                    if valor == self.__numero_conta:
+                        print("Voce deve digitar um numero de conta diferente da sua atual.")
+                        break
+                    else:
+                        self.__numero_conta = valor
+                        print(f"Agora sua conta se indentifica com o numero {valor}")
+                        break
+                else:
+                    chances -= 1
+                    print(f"Voce digitou a senha errada, tente novamente, voce ainda tem {chances} chances restantes")
+            except:
+                print(f"Voce perdeu todas as tentativas tente novamente")
+                break
+
+
 
     
