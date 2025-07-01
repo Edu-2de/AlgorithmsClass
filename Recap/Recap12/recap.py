@@ -22,6 +22,9 @@ class Veiculo:
     def __str__(self):
         return f"Veiculo da marca: {self.marca} e do modelo: {self.modelo} foi criado com sucesso"
     
+    def mover(self) -> None:
+        print(f"O Veiculo esta se movendo") 
+    
 
 class Carro(Veiculo):
     def __init__(self, id:int = 0, marca:str = None, modelo:str = None, __placa:str = None):
@@ -30,6 +33,10 @@ class Carro(Veiculo):
 
     def __str__(self):
         return f"Carro da placa: {self.__placa} cadastrado com sucesso"
+    
+    def mover(self) -> str:
+        super().mover()
+        return f"O carro está dirigindo"
     
 
 class Bicicleta(Veiculo):
@@ -42,7 +49,12 @@ class Bicicleta(Veiculo):
     def __str__(self):
         return f"Bicicleta de {self._marchas} foi cadastrada com sucesso"
     
-    def acelerar(self, velocidade:float):
+    def mover(self) -> str:
+        super().mover()
+        self.velocidade_atual += 1.5
+        return f"A bicicleta está pedalando "
+    
+    def acelerar(self, velocidade:float) -> str:
         if velocidade < self.velocidade_atual and velocidade > 0.0:
             self.marcha_atual -= 1
             self.velocidade_atual = velocidade
