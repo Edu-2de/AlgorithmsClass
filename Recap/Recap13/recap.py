@@ -15,25 +15,15 @@ class Conta:
     def __str__(self):
         return f"A conta: {self.__numero_conta} tem o titular: {self.titular}"
     
-    def sacar(self, valor:float, senha:str):
-        chances = 3
-        while chances:
-            try:
-                if senha == self.senha:
-                    if valor <= self._saldo:
-                        self._saldo -= valor
-                        print(f"Voce sacou: {valor} da sua conta, agora voce tem: {self._saldo} de saldo restante")
-                        break
-                    else:
-                        print(f"Voce nao tem saldo suficiente para sacar essa quantia")
-                        break
-                else:
-                    chances -= 1
-                    print(f"Voce digitou a senha errada, tente novamente, voce ainda tem {chances} chances restantes")
-
-            except:
-                print(f"Voce perdeu todas as tentativas tente novamente")
-                break
+    def sacar(self, valor:float):
+        if valor <= self._saldo:
+            self._saldo -= valor
+            print(f"Voce sacou: {valor} da sua conta, agora voce tem: {self._saldo} de saldo restante")
+      
+        else:
+            print(f"Voce nao tem saldo suficiente para sacar essa quantia")
+        
+    
 
     def depositar(self, valor:float):
         if valor > 0.0:
@@ -43,8 +33,9 @@ class Conta:
             print("Voce so pode depositar uma quantia que seja maior que zero")
 
 
-    def get_numero_conta(self):
+    def get_numero_conta(self) -> str:
         print(self.__numero_conta)
+        return self.__numero_conta
 
     def set_numero_conta(self, valor:str, senha:str):
         chances = 3
@@ -98,8 +89,39 @@ def menu():
         elif resposta == '2':
             num_conta = str(input("Digite o numero da sua conta: ")) 
             senha = str(input("Digite sua senha: "))
-            chances = 3:
-            while chances:
-                try:
-                    if senha == 
+            conta = None
+            for i in contas:
+                if i.get_numero_conta() == num_conta:
+                    conta = i
+            
+            acesso = False
+
+            if conta != None:
+                chances = 3
+                while chances:
+                    try:
+                        if senha != conta.senha:
+                            chances -=1
+                            print(f"Voce digitou a senha errada, voce ainda tem {chances} chances")
+                        else:
+                            print(f"Voce liberou acesso a conta!")
+                            acesso = True
+                            break
+        
+                    except:
+                        print("Voce nao tem mais chances")
+                        break
+            else:
+                print("Essa conta nao existe")
+
+            if acesso == True:
+            
+                while True:
+                    print(f"\n--- MENU Conta {conta.titular} ---")
+                    print("1. Sacar quantia")
+                    print("6. Sair")
+                    opcaoconta = int(input("Digite a opcao que deseja: "))
+                    if opcaoconta == 1:
+                        valor = float(input("Digite o valor que deseja sacar: "))
+                        conta.sacar(valor)
 
