@@ -28,4 +28,16 @@ class Carro(Veiculo):
         super().__init__(id, marca, modelo)
         self.__placa = __placa
 
+    def __str__(self):
+        return f"Carro da placa: {self.__placa} cadastrado com sucesso"
     
+
+class Bicicleta(Veiculo):
+    def __init__(self, id:int = 0, marca:str = None, modelo:str = None, _marchas:int = 0, _marcha_atual:int = 0):
+        super().__init__(id, marca, modelo)
+        self._marchas = _marchas,
+        self._marcha_atual = 0
+
+    def __str__(self):
+        return f"Bicicleta de {self._marchas} foi cadastrada com sucesso"
+
