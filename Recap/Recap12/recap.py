@@ -60,7 +60,13 @@ class Bicicleta(Veiculo):
     def mover(self) -> str:
         super().mover()
         self.velocidade_atual += 1.5
-        return f"A bicicleta está pedalando "
+        return f"A bicicleta está pedalando"
+    
+    def trocar_numero_marchas(self, nova_marcha:int) -> str:
+        if nova_marcha != self._marchas:
+            self._marchas = nova_marcha
+            f""
+        
     
     def acelerar(self, velocidade:float) -> str:
         if velocidade < self.velocidade_atual and velocidade > 0.0:
