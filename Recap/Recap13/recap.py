@@ -4,16 +4,16 @@ import string
 class Conta:
     _contador_id = 0
   
-    def __init__(self, _saldo:float = 0.0, titular:str = None, senha:str = None):
+    def __init__(self, titular:str = None, senha:str = None,):
         self.id = Conta._contador_id
         Conta._contador_id += 1
         self.__numero_conta =  ''.join(random.choices(string.ascii_letters + string.digits, k=5))
-        self._saldo = _saldo
+        self._saldo = 0.0
         self.titular = titular
         self.senha = senha
 
     def __str__(self):
-        return f"A conta: {self.__numero_conta} do titular: {self.titular} foi criada com sucesso"
+        return f"A conta: {self.__numero_conta} tem o titular: {self.titular}"
     
     def sacar(self, valor:float, senha:str):
         chances = 3
@@ -65,6 +65,36 @@ class Conta:
                 print(f"Voce perdeu todas as tentativas tente novamente")
                 break
 
+    def consultar_saldo(self):
+        print(f"Voce tem um total de: {self._saldo} de saldo na sua conta")
 
 
-    
+contas = []
+
+def menu():
+    while True:
+        print("\n--- MENU Conta ---")
+        print("1. Cadastrar Conta")
+        print("2. Listar autores")
+        print("3. Adicionar livro a um autor")
+        print("4. Listar livros de um autor")
+        print("5. Remover livro de um autor")
+        print("6. Sair")
+        
+        resposta = int(input("Escolha uma opcao: "))
+        if resposta == '1':
+            titular = str(input("Qual o nome do titular da conta? "))
+            senha = str(input("Qual a senha da conta? "))
+            existe = False
+            for i in contas:
+                if i.titular == titular:
+                    print('Ja temos uma conta com esse titular')
+                    existe = True
+                    break
+            
+            if existe == False:
+                x = Conta(titular, senha)
+                contas.append(x)
+                print(x)
+                    
+
