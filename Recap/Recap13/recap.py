@@ -23,6 +23,7 @@ class Conta:
                     if valor <= self._saldo:
                         self._saldo -= valor
                         print(f"Voce sacou: {valor} da sua conta, agora voce tem: {self._saldo} de saldo restante")
+                        break
                     else:
                         print(f"Voce nao tem saldo suficiente para sacar essa quantia")
                 else:
@@ -31,3 +32,4 @@ class Conta:
 
             except:
                 print(f"Voce perdeu todas as tentativas tente novamente")
+                break
