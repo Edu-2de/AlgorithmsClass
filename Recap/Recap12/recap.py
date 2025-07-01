@@ -38,7 +38,10 @@ class Carro(Veiculo):
         super().mover()
         return f"O carro está dirigindo"
     
-    def trocar_placa(self, placa:str)
+    def trocar_placa(self, placa_nova:str) -> str:
+        self.__placa = placa_nova
+        return f"A placa do carro foi alterada para: {self.__placa}"
+
     
 
 class Bicicleta(Veiculo):
