@@ -39,8 +39,11 @@ class Carro(Veiculo):
         return f"O carro está dirigindo"
     
     def trocar_placa(self, placa_nova:str) -> str:
-        self.__placa = placa_nova
-        return f"A placa do carro foi alterada para: {self.__placa}"
+        if placa_nova != self.__placa:
+            self.__placa = placa_nova
+            return f"A placa do carro foi alterada para: {self.__placa}"
+        else:
+            return f"A placa fornecida é igual a antiga ou nao é um campo de texto"
 
     
 
