@@ -17,11 +17,17 @@ class Conta:
     
     def sacar(self, valor:float, senha:str):
         chances = 3
-        if senha == self.senha:
-            if valor <= self._saldo:
-                self._saldo -= valor
-                print(f"Voce sacou: {valor} da sua conta, agora voce tem: {self._saldo} de saldo restante")
-            else:
-                print(f"Voce nao tem saldo suficiente para sacar essa quantia")
-        else:
-            print(f"Voce digitou a senha errada, tente novamente")
+        while chances :
+            try:
+                if senha == self.senha:
+                    if valor <= self._saldo:
+                        self._saldo -= valor
+                        print(f"Voce sacou: {valor} da sua conta, agora voce tem: {self._saldo} de saldo restante")
+                    else:
+                        print(f"Voce nao tem saldo suficiente para sacar essa quantia")
+                else:
+                    chances -= 1
+                    print(f"Voce digitou a senha errada, tente novamente, voce ainda tem {chances} chances restantes")
+
+            except:
+                print(f"Voce perdeu todas as tentativas tente novamente")
