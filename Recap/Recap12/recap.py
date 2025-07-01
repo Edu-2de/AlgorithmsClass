@@ -38,6 +38,8 @@ class Carro(Veiculo):
         super().mover()
         return f"O carro está dirigindo"
     
+    def trocar_placa(self, placa:str)
+    
 
 class Bicicleta(Veiculo):
     def __init__(self, id:int = 0, marca:str = None, modelo:str = None, _marchas:int = 0, marcha_atual:int = 0, velocidade_atual:float = 0.0):
@@ -64,7 +66,7 @@ class Bicicleta(Veiculo):
             self.velocidade_atual = velocidade
             return(f"A bicicleta aumentou uma mrcha e agora esta com a veolocidade de: {self.velocidade_atual} km")
         else:
-            return(f"A bicicleta já está parada, voce nao pode diminuir a marcha")
+            return(f"A bicicleta já está parada, voce nao pode diminuir a marcha ou forneceu a velocidade de maneira errada")
 
 
 
