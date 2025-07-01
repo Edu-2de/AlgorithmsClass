@@ -42,4 +42,8 @@ class Conta:
         else:
             print("Voce so pode depositar uma quantia que seja maior que zero")
 
+
+    def get_numero_conta(self):
+        print(self.__numero_conta)
+
     
