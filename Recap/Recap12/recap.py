@@ -64,10 +64,14 @@ class Bicicleta(Veiculo):
             self.marcha_atual -= 1
             self.velocidade_atual = velocidade
             return(f"A bicicleta diminuiu uma mrcha e agora esta com a veolocidade de: {self.velocidade_atual} km")
-        elif velocidade > self.velocidade_atual:
+        elif velocidade > self.velocidade_atual and self.marcha_atual < self._marchas:
             self.marcha_atual += 1
             self.velocidade_atual = velocidade
+            if self.marcha_atual == self._marchas:
+                return(f"Voce chegou na ultima marcha, agora tem que desacelerar")
             return(f"A bicicleta aumentou uma mrcha e agora esta com a veolocidade de: {self.velocidade_atual} km")
+        elif self.marcha_atual == self._marchas:
+            return(f"Voce chegou na ultima marcha, agora tem que desacelerar")
         else:
             return(f"A bicicleta já está parada, voce nao pode diminuir a marcha ou forneceu a velocidade de maneira errada")
 
