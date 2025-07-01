@@ -12,4 +12,8 @@ class Conta:
         self.titular = titular
 
     def __str__(self):
-        return f"A conta {self.__numero_conta} do titular: {self.titular} foi criada com sucesso"
+        return f"A conta: {self.__numero_conta} do titular: {self.titular} foi criada com sucesso"
+    
+    def sacar(self, valor:float):
+        if valor <= self._saldo:
+            print(f"Voce sacou: {valor} da sua conta, agora voce tem: {self._saldo} de saldo restante")
