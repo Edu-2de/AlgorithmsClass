@@ -75,7 +75,7 @@ def menu():
     while True:
         print("\n--- MENU Conta ---")
         print("1. Cadastrar Conta")
-        print("2. Listar autores")
+        print("2. Entrar na Conta")
         print("3. Adicionar livro a um autor")
         print("4. Listar livros de um autor")
         print("5. Remover livro de um autor")
@@ -95,5 +95,7 @@ def menu():
                 x = Conta(titular, senha)
                 contas.append(x)
                 print(x)
-                    
+        elif resposta == '2':
+            num_conta = str(input("Digite o numero da sua conta: ")) 
+            senha = str(input("Digite sua senha: "))
 
