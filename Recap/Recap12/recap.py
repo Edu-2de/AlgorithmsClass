@@ -63,9 +63,12 @@ class Bicicleta(Veiculo):
         return f"A bicicleta está pedalando"
     
     def trocar_numero_marchas(self, nova_marcha:int) -> str:
-        if nova_marcha != self._marchas:
+        if nova_marcha != self._marchas and nova_marcha >= 1:
             self._marchas = nova_marcha
-            f""
+            return f"A bicicleta agora tem: {self._marchas}"
+        else:
+            return f"A bicicleta ja tem esse numero de marchas ou voce digitou um campo nao inteiro"
+
         
     
     def acelerar(self, velocidade:float) -> str:
