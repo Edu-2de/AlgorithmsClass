@@ -120,6 +120,7 @@ def menu():
                     print(f"\n--- MENU Conta de {conta.titular} ---")
                     print("1. Sacar quantia")
                     print("2. Depositar quantia")
+                    print("3. Ver numero da conta")
                     print("6. Sair")
                     opcaoconta = int(input("Digite a opcao que deseja: "))
                     if opcaoconta == 1:
@@ -128,6 +129,8 @@ def menu():
                     elif opcaoconta == 2:
                         valor = float(input("Digite o valor que deseja depositar:"))
                         conta.depositar(valor)
+                    elif opcaoconta == 3:
+                        conta.get_numero_conta()
                     
                     else:
                         print("Digite somente alguma das opcoes acima")
