@@ -311,7 +311,6 @@ def menu():
                                 break
                             else:
                                 print("Digite somente sim ou nao")
-                        
                         elif contacorrente == True:
                             print("A sua conta é do tipo corrente")
 
@@ -335,7 +334,7 @@ def menu():
                                     contasPoupanca.append(novaconta)
                                     contas.append(novaconta)
 
-                                    print("Voce acaba de trocar sua conta de poupanca para corrente")
+                                    print("Voce acaba de trocar sua conta de corrente para poupanca")
                                     print(novaconta)
                                     break
                                 elif escolha2 == "nao" or escolha2 =="não":
@@ -348,11 +347,10 @@ def menu():
                                 break
                             else:
                                 print("Digite somente sim ou nao")
+                        else:
+                            print("Erro, sua conta nao é nem corrente nem poupanca!")
 
-                               
-
-
-
+                            
 
                     elif opcaoconta == 7:
                         break
