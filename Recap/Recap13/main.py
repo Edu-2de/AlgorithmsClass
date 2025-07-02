@@ -162,6 +162,8 @@ def menu():
         print("1. Cadastrar Conta")
         print("2. Entrar na Conta")
         print("3. Exibir todas as Contas")
+        print("4. Exibir todas as Conats Corrente")
+        print("5. Exibir todas as Conats Poupanca")
         print("6. Sair")
         
         resposta = int(input("Escolha uma opcao: "))
@@ -361,7 +363,28 @@ def menu():
             if len(contas) <= 0:
                 print("Nao temos contas cadastradas no momento.")
             else:
+                print("--- TODAS AS CONTAS ---")
                 for i in contas:
+                    print("------------")
+                    print(i)
+                    print("------------")
+
+        elif resposta == 4:
+            if len(contasCorrente) <= 0:
+                print("Nao temos contas cadastradas no momento.")
+            else:
+                print("--- TODAS AS CONTAS CORRENTE ---")
+                for i in contasCorrente:
+                    print("------------")
+                    print(i)
+                    print("------------")
+
+        elif resposta == 5:
+            if len(contasPoupanca) <= 0:
+                print("Nao temos contas cadastradas no momento.")
+            else:
+                print("--- TODAS AS CONTAS POUPANCA ---")
+                for i in contasPoupanca:
                     print("------------")
                     print(i)
                     print("------------")
