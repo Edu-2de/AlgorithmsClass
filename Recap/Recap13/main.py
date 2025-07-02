@@ -196,7 +196,6 @@ def menu():
 
         elif resposta == 2:
             num_conta = str(input("Digite o numero da sua conta: ")) 
-            senha = str(input("Digite sua senha: "))
             conta = None
             for i in contas:
                 if i.get_numero_conta() == num_conta:
@@ -208,6 +207,7 @@ def menu():
                 chances = 3
                 while chances:
                     try:
+                        senha = str(input("Digite sua senha: "))
                         if senha != conta.senha:
                             chances -=1
                             print(f"Voce digitou a senha errada, voce ainda tem {chances} chances")
@@ -267,7 +267,7 @@ def menu():
                     print("------------")
                     print(i)
                     print("------------")
-                    
+
         elif resposta == 6:
             break
         else:
