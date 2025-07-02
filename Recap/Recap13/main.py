@@ -124,7 +124,6 @@ def menu():
                     if opcaoconta == 1:
                         valor = float(input("Digite o valor que deseja sacar: "))
                         conta.sacar(valor)
-                        break
                     else:
                         print("Digite somente alguma das opcoes acima")
 
