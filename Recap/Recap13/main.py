@@ -111,6 +111,13 @@ class ContaPoupanca(Conta):
         super().__str__()
 
     def sacar(self, valor):
+        if valor < self._saldo:
+            x = self._saldo - valor
+            print(f'Voce nao pode sacar esse valor, voce tem somente: {self._saldo} de saldo na conta')
+        else:
+            super().sacar(valor)
+
+
 
 
     
