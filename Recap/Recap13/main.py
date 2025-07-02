@@ -72,6 +72,25 @@ class Conta:
         print(f"Voce tem um total de: {self._saldo} de saldo na sua conta")
 
 
+class ContaCorrente(Conta):
+    def __init__(self, titular = None, senha = None):
+        super().__init__(titular, senha)
+        self.limite = -500
+
+    def __str__(self):
+        print('A conta é do tipo conta corrente')
+        return super().__str__()
+    
+    def sacar(self, valor):
+        self._saldo -= valor
+        if self._saldo >= self.limite:
+            return super().sacar(valor)
+        else:
+            print("Voce ja chegou no seu limite de saldo!")
+        
+
+
+
 contas = []
 
 def menu():
