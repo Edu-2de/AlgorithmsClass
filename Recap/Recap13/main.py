@@ -143,28 +143,57 @@ class ContaPoupanca(Conta):
 
 
 contas = []
+contasCorrente = []
+contasPoupanca = []
 
 def menu():
     while True:
-        print("\n--- MENU Conta ---")
+        print("\n--- MENU ---")
         print("1. Cadastrar Conta")
         print("2. Entrar na Conta")
+        print("3. Exibir todas as Contas")
         print("6. Sair")
         
         resposta = int(input("Escolha uma opcao: "))
         if resposta == 1:
-            titular = str(input("Qual o nome do titular da conta? "))
-            senha = str(input("Qual a senha da conta? "))
-            existe = False
-            for i in contas:
-                if i.titular == titular:
-                    print('Ja temos uma conta com esse titular')
-                    existe = True
-                    break
-            if existe == False:
-                x = Conta(titular, senha)
-                contas.append(x)
-                print(x)
+
+            print("1. Conta corrente")
+            print("2. Conta poupanca")
+            tipoconta = int(input('Qual o tipo de conta que voce deseja criar?'))
+
+            if tipoconta == 1:
+                titular = str(input("Qual o nome do titular da conta? "))
+                senha = str(input("Qual a senha da conta? "))
+                existe = False
+                for i in contasCorrente:
+                    if i.titular == titular:
+                        print('Ja temos uma conta com esse titular')
+                        existe = True
+                        break
+                if existe == False:
+                    x = Conta(titular, senha)
+                    contas.append(x)
+                    contasCorrente.append(x)
+                    print(x)
+
+            elif tipoconta == 2:
+                titular = str(input("Qual o nome do titular da conta? "))
+                senha = str(input("Qual a senha da conta? "))
+                existe = False
+                for i in contasPoupanca:
+                    if i.titular == titular:
+                        print('Ja temos uma conta com esse titular')
+                        existe = True
+                        break
+                if existe == False:
+                    x = Conta(titular, senha)
+                    contas.append(x)
+                    contasPoupanca.append(x)
+                    print(x)
+            else:
+                print("Digite somente alguma das opcoes acima")
+
+
         elif resposta == 2:
             num_conta = str(input("Digite o numero da sua conta: ")) 
             senha = str(input("Digite sua senha: "))
@@ -196,7 +225,7 @@ def menu():
             if acesso == True:
             
                 while True:
-                    print(f"\n--- MENU Conta de {conta.titular} ---")
+                    print(f"\n--- MENU DE {conta.titular} ---")
                     print("1. Sacar quantia")
                     print("2. Depositar quantia")
                     print("3. Ver numero da conta")
@@ -229,6 +258,10 @@ def menu():
                         break
                     else:
                         print("Digite somente alguma das opcoes acima")
+
+        elif resposta == 3:
+            for i in contas:
+                print(i)
         elif resposta == 6:
             break
         else:
