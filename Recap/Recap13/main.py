@@ -57,9 +57,6 @@ def menu():
         print("\n--- MENU Conta ---")
         print("1. Cadastrar Conta")
         print("2. Entrar na Conta")
-        print("3. Adicionar livro a um autor")
-        print("4. Listar livros de um autor")
-        print("5. Remover livro de um autor")
         print("6. Sair")
         
         resposta = int(input("Escolha uma opcao: "))
@@ -140,6 +137,11 @@ def menu():
                         break
                     else:
                         print("Digite somente alguma das opcoes acima")
+        elif resposta == 6:
+            break
+        else:
+            print("Digite somente alguma das opcoes acima")
+
 
 
 
