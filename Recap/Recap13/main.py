@@ -111,6 +111,7 @@ def menu():
                     print("1. Sacar quantia")
                     print("2. Depositar quantia")
                     print("3. Ver numero da conta")
+                    print("4. Alterar numero da conta")
                     print("6. Sair")
                     opcaoconta = int(input("Digite a opcao que deseja: "))
                     if opcaoconta == 1:
@@ -122,7 +123,20 @@ def menu():
                     elif opcaoconta == 3:
                         conta.get_numero_conta()
                     elif opcaoconta == 4:
-                        
+                        x = conta.get_numero_conta()
+                        print(f"O numero atual da sua conta é: {x}")
+                        num_conta_novo = str(input("Digite o novo numero da sua conta: "))
+                        existe = False
+                        for i in contas:
+                            if i.get_numero_conta() == num_conta_novo:
+                                existe = True
+
+                        if existe == False:
+                            conta.set_numero_conta(num_conta_novo)
+                            
+
+                    
+
                     
                     else:
                         print("Digite somente alguma das opcoes acima")
