@@ -231,7 +231,8 @@ def menu():
                     print("3. Ver numero da conta")
                     print("4. Alterar numero da conta")
                     print("5. Verificar saldo")
-                    print("6. Sair")
+                    print("6. Trocar tipo de conta")
+                    print("7. Sair")
                     opcaoconta = int(input("Digite a opcao que deseja: "))
                     if opcaoconta == 1:
                         valor = float(input("Digite o valor que deseja sacar: "))
@@ -255,6 +256,22 @@ def menu():
                     elif opcaoconta == 5:
                         conta.consultar_saldo()
                     elif opcaoconta == 6:
+                        contacorrente = False
+                        contapoupanca = False
+                        for i in contasCorrente:
+                            if i.get_numero_conta() == conta.get_numero_conta():
+                                contacorrente = True
+                        
+                        for i in contasPoupanca:
+                            if i.get_numero_conta() == conta.get_numero_conta():
+                                contapoupanca = True
+
+                        if contapoupanca == True:
+                            print("A sua conta é do tipo poupanca")
+                            escolha = str(input("Deseja alterar o tipo de conta para conta Corrente?"))
+
+
+                    elif opcaoconta == 7:
                         break
                     else:
                         print("Digite somente alguma das opcoes acima")
