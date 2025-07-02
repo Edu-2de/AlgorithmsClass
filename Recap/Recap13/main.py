@@ -56,7 +56,6 @@ class Conta:
 
 
     def get_numero_conta(self) -> str:
-        print(self.__numero_conta)
         return self.__numero_conta
 
     def set_numero_conta(self, valor:str):    
@@ -82,8 +81,8 @@ class ContaCorrente(Conta):
         self.limite = -500
 
     def __str__(self):
-        print('A conta é do tipo conta corrente')
-        return super().__str__()
+        return f"A conta é do tipo corrente, e tem o titular: {self.titular}"
+
     
     def sacar(self, valor):
         x = self._saldo - valor
@@ -114,8 +113,7 @@ class ContaPoupanca(Conta):
         super().__init__(titular, senha)
 
     def __str__(self):
-        print('A conta é do tipo conta poupanca')
-        super().__str__()
+        return f"A conta é do tipo poupanca, e tem o titular: {self.titular}"
 
     def sacar(self, valor):
         if valor < self._saldo:
@@ -171,7 +169,7 @@ def menu():
 
             print("1. Conta corrente")
             print("2. Conta poupanca")
-            tipoconta = int(input('Qual o tipo de conta que voce deseja criar?'))
+            tipoconta = int(input('Qual o tipo de conta que voce deseja criar? '))
 
             if tipoconta == 1:
                 titular = str(input("Qual o nome do titular da conta? "))
@@ -186,7 +184,9 @@ def menu():
                     x = ContaCorrente(titular, senha)
                     contas.append(x)
                     contasCorrente.append(x)
+                    print("\n")
                     print(x)
+                    print(f"A sua conta se indentifica com o numero: {x.get_numero_conta()}")
 
             elif tipoconta == 2:
                 titular = str(input("Qual o nome do titular da conta? "))
@@ -201,7 +201,9 @@ def menu():
                     x = ContaPoupanca(titular, senha)
                     contas.append(x)
                     contasPoupanca.append(x)
+                    print("\n")
                     print(x)
+                    print(f"A sua conta se indentifica com o numero: {x.get_numero_conta()}")
             else:
                 print("Digite somente alguma das opcoes acima")
 
@@ -294,14 +296,18 @@ def menu():
 
                                     novaconta = ContaCorrente(val1, val2)
 
-                                    novaconta.set_numero_conta(val3)
+                                    print("\n")
+
                                     novaconta.set_saldo(val4)
 
+                                    
+                                    novaconta.set_numero_conta(val3)
                                     contasCorrente.append(novaconta)
                                     contas.append(novaconta)
 
                                     print("Voce acaba de trocar sua conta de poupanca para corrente")
                                     print(novaconta)
+                                  
                                     break
                                 elif escolha2 == "nao" or escolha2 =="não":
                                     print("Ok, nada foi alterado!")
@@ -330,14 +336,19 @@ def menu():
 
                                     novaconta = ContaPoupanca(val1, val2)
 
+                                    print("\n")
+
                                     novaconta.set_numero_conta(val3)
                                     novaconta.set_saldo(val4)
+                                    
 
                                     contasPoupanca.append(novaconta)
                                     contas.append(novaconta)
 
                                     print("Voce acaba de trocar sua conta de corrente para poupanca")
                                     print(novaconta)
+
+                         
                                     break
                                 elif escolha2 == "nao" or escolha2 =="não":
                                     print("Ok, nada foi alterado!")
@@ -363,30 +374,34 @@ def menu():
             if len(contas) <= 0:
                 print("Nao temos contas cadastradas no momento.")
             else:
+                print("\n")
                 print("--- TODAS AS CONTAS ---")
                 for i in contas:
                     print("------------")
-                    print(i)
+                    print(f"Conta: {i.get_numero_conta()} pretence ao titular: {i.titular}")
                     print("------------")
 
         elif resposta == 4:
             if len(contasCorrente) <= 0:
                 print("Nao temos contas cadastradas no momento.")
             else:
-                print("--- TODAS AS CONTAS CORRENTE ---")
+                print("\n")
+                print("--- CONTAS CORRENTE ---")
                 for i in contasCorrente:
                     print("------------")
-                    print(i)
+                    print(f"Conta: {i.get_numero_conta()} pretence ao titular: {i.titular}")
                     print("------------")
 
         elif resposta == 5:
             if len(contasPoupanca) <= 0:
                 print("Nao temos contas cadastradas no momento.")
             else:
-                print("--- TODAS AS CONTAS POUPANCA ---")
+                print("\n")
+                print("--- CONTAS POUPANCA ---")
                 for i in contasPoupanca:
                     print("------------")
-                    print(i)
+                    print(f"Conta: {i.get_numero_conta()} pretence ao titular: {i.titular}")
+
                     print("------------")
 
         elif resposta == 6:
