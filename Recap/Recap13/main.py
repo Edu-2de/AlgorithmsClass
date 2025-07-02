@@ -38,12 +38,12 @@ class Conta:
         return f"A conta: {self.__numero_conta} tem o titular: {self.titular}"
     
     def sacar(self, valor:float):
-        if valor <= self._saldo:
+        if valor > 0:
             self._saldo -= valor
             print(f"Voce sacou: {valor} da sua conta, agora voce tem: {self._saldo} de saldo restante")
-      
         else:
-            print(f"Voce nao tem saldo suficiente para sacar essa quantia")
+            print("Voce nao pode sacar uma quantia menor que 0")
+      
         
     
 
@@ -82,11 +82,38 @@ class ContaCorrente(Conta):
         return super().__str__()
     
     def sacar(self, valor):
-        self._saldo -= valor
-        if self._saldo >= self.limite:
-            return super().sacar(valor)
+        x = self._saldo - valor
+        if x >= self.limite:
+            super().sacar(valor)
+            print(f"E seu limite de saque é: {self.limite}, nao esqueca!")
         else:
             print("Voce ja chegou no seu limite de saldo!")
+       
+
+    def depositar(self, valor):
+        return super().depositar(valor)
+    
+    def get_numero_conta(self):
+        return super().get_numero_conta()
+    
+    def set_numero_conta(self, valor):
+        return super().set_numero_conta(valor)
+    
+    def consultar_saldo(self):
+        return super().consultar_saldo()
+    
+class ContaPoupanca(Conta):
+    def __init__(self, titular = None, senha = None):
+        super().__init__(titular, senha)
+
+    def __str__(self):
+        print('A conta é do tipo conta poupanca')
+        super().__str__()
+
+    def sacar(self, valor):
+
+
+    
         
 
 
