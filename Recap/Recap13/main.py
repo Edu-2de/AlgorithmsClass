@@ -7,8 +7,7 @@ class Conta:
     def __init__(self, titular:str = None, senha:str = None,):
         self.id = Conta._contador_id
         Conta._contador_id += 1
-        self.__numero_conta =  ''.join(random.choices(string.ascii_letters + string.digits, k=5))
-        self._saldo = 0.0
+        self.__numero_conta = ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))        self._saldo = 0.0
         self.titular = titular
         self.senha = senha
 
@@ -73,7 +72,7 @@ def menu():
         print("6. Sair")
         
         resposta = int(input("Escolha uma opcao: "))
-        if resposta == '1':
+        if resposta == 1:
             titular = str(input("Qual o nome do titular da conta? "))
             senha = str(input("Qual a senha da conta? "))
             existe = False
@@ -86,7 +85,7 @@ def menu():
                 x = Conta(titular, senha)
                 contas.append(x)
                 print(x)
-        elif resposta == '2':
+        elif resposta == 2:
             num_conta = str(input("Digite o numero da sua conta: ")) 
             senha = str(input("Digite sua senha: "))
             conta = None
@@ -127,4 +126,14 @@ def menu():
                         break
                     else:
                         print("Digite somente alguma das opcoes acima")
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    menu()
 
