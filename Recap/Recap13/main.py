@@ -117,7 +117,7 @@ def menu():
             if acesso == True:
             
                 while True:
-                    print(f"\n--- MENU Conta {conta.titular} ---")
+                    print(f"\n--- MENU Conta de {conta.titular} ---")
                     print("1. Sacar quantia")
                     print("6. Sair")
                     opcaoconta = int(input("Digite a opcao que deseja: "))
