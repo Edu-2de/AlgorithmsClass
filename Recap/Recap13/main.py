@@ -1,6 +1,28 @@
 import random
 import string
 
+'''
+Crie um sistema de gerenciamento de contas bancárias com os seguintes requisitos:
+
+- Crie uma classe abstrata chamada Conta.
+- O método sacar deve ser abstrato.
+- Crie as classes ContaCorrente e ContaPoupanca que herdam de Conta.
+- Ambas devem implementar o método sacar de forma diferente:
+    - ContaCorrente permite saque até um limite negativo (ex: -500).
+    - ContaPoupanca não permite saldo negativo.
+- O atributo saldo deve ser protegido.
+- O atributo numero_conta deve ser fortemente privado e gerado automaticamente.
+- Implemente métodos getter e setter para o atributo numero_conta.
+- Implemente um método para depositar em ambas as contas.
+- Crie um menu para:
+    - Criar contas (corrente ou poupança)
+    - Depositar
+    - Sacar
+    - Consultar saldo
+    - Listar todas as contas
+
+'''
+
 class Conta:
     _contador_id = 0
   
