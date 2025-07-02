@@ -261,7 +261,9 @@ def menu():
 
         elif resposta == 3:
             for i in contas:
+                print("------------")
                 print(i)
+                print("------------")
         elif resposta == 6:
             break
         else:
