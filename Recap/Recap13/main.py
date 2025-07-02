@@ -316,7 +316,38 @@ def menu():
                             print("A sua conta é do tipo corrente")
 
                             
-                            escolha = str(input("Deseja alterar o tipo de conta para conta Corrente (digite sim ou nao) ?"))
+                            escolha = str(input("Deseja alterar o tipo de conta para conta Poupanca (digite sim ou nao) ?"))
+                            if escolha == "sim":
+                                escolha2 = str(input("Tem certeza que deseja fazer isso? (digite sim ou nao)"))
+                                if escolha2 == "sim":
+                                    val1 = conta.titular
+                                    val2 = conta.senha
+                                    val3 = conta.get_numero_conta()
+                                    val4 = conta.consultar_saldo()
+                                    contasCorrente.remove(conta)
+                                    contas.remove(conta)
+
+                                    novaconta = ContaPoupanca(val1, val2)
+
+                                    novaconta.set_numero_conta(val3)
+                                    novaconta.set_saldo(val4)
+
+                                    contasPoupanca.append(novaconta)
+                                    contas.append(novaconta)
+
+                                    print("Voce acaba de trocar sua conta de poupanca para corrente")
+                                    print(novaconta)
+                                    break
+                                elif escolha2 == "nao" or escolha2 =="não":
+                                    print("Ok, nada foi alterado!")
+                                    break
+                                else:
+                                    print("Digite somente sim ou nao")
+                            elif escolha== "nao" or escolha =="não":
+                                print("Ok, nada foi alterado!")
+                                break
+                            else:
+                                print("Digite somente sim ou nao")
 
                                
 
