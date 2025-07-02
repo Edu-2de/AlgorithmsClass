@@ -116,6 +116,23 @@ class ContaPoupanca(Conta):
             print(f'Voce nao pode sacar esse valor, voce tem somente: {self._saldo} de saldo na conta')
         else:
             super().sacar(valor)
+    
+    def depositar(self, valor):
+        return super().depositar(valor)
+    
+    def get_numero_conta(self):
+        return super().get_numero_conta()
+    
+    def set_numero_conta(self, valor):
+        return super().set_numero_conta(valor)
+    
+    def consultar_saldo(self):
+        return super().consultar_saldo()
+    
+    
+
+
+
 
 
 
