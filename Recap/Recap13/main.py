@@ -260,10 +260,14 @@ def menu():
                         print("Digite somente alguma das opcoes acima")
 
         elif resposta == 3:
-            for i in contas:
-                print("------------")
-                print(i)
-                print("------------")
+            if len(contas) <= 0:
+                print("Nao temos contas cadastradas no momento.")
+            else:
+                for i in contas:
+                    print("------------")
+                    print(i)
+                    print("------------")
+                    
         elif resposta == 6:
             break
         else:
