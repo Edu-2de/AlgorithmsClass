@@ -26,7 +26,7 @@ Crie um sistema de gerenciamento de contas bancárias com os seguintes requisito
 class Conta:
     _contador_id = 0
   
-    def __init__(self, titular:str = None, senha:str = None,):
+    def __init__(self, titular:str = None, senha:str = None, ):
         self.id = Conta._contador_id
         Conta._contador_id += 1
         self.__numero_conta = ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))        
@@ -70,6 +70,10 @@ class Conta:
 
     def consultar_saldo(self):
         print(f"Voce tem um total de: {self._saldo} de saldo na sua conta")
+        return self._saldo
+    
+    def set_saldo(self, valor):
+        self._saldo = valor
 
 
 class ContaCorrente(Conta):
@@ -102,6 +106,9 @@ class ContaCorrente(Conta):
     def consultar_saldo(self):
         return super().consultar_saldo()
     
+    def set_saldo(self, valor):
+        return super().set_saldo(valor)
+    
 class ContaPoupanca(Conta):
     def __init__(self, titular = None, senha = None):
         super().__init__(titular, senha)
@@ -128,6 +135,9 @@ class ContaPoupanca(Conta):
     
     def consultar_saldo(self):
         return super().consultar_saldo()
+    
+    def set_saldo(self, valor):
+        return super().set_saldo(valor)
     
     
 
@@ -268,7 +278,46 @@ def menu():
 
                         if contapoupanca == True:
                             print("A sua conta é do tipo poupanca")
-                            escolha = str(input("Deseja alterar o tipo de conta para conta Corrente?"))
+                       
+                            escolha = str(input("Deseja alterar o tipo de conta para conta Corrente (digite sim ou nao) ?"))
+                            if escolha == "sim":
+                                escolha2 = str(input("Tem certeza que deseja fazer isso? (digite sim ou nao)"))
+                                if escolha2 == "sim":
+                                    val1 = conta.titular
+                                    val2 = conta.senha
+                                    val3 = conta.get_numero_conta()
+                                    val4 = conta.consultar_saldo()
+                                    contasPoupanca.remove(conta)
+                                    contas.remove(conta)
+
+                                    novaconta = ContaCorrente(val1, val2)
+
+                                    novaconta.set_numero_conta(val3)
+                                    novaconta.set_saldo(val4)
+
+                                    contasCorrente.append(novaconta)
+                                    contas.append(novaconta)
+
+                                    print("Voce acaba de trocar sua conta de poupanca para corrente")
+                                    print(novaconta)
+                                    break
+                                elif escolha2 == "nao" or escolha2 =="não":
+                                    print("Ok, nada foi alterado!")
+                                    break
+                                else:
+                                    print("Digite somente sim ou nao")
+                            elif escolha== "nao" or escolha =="não":
+                                print("Ok, nada foi alterado!")
+                                break
+                            else:
+                                print("Digite somente sim ou nao")
+                        
+                        elif contacorrente == True:
+                            print("A sua conta é do tipo poupanca")
+
+                               
+
+
 
 
                     elif opcaoconta == 7:
