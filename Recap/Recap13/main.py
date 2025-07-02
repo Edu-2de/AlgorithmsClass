@@ -119,11 +119,16 @@ def menu():
                 while True:
                     print(f"\n--- MENU Conta de {conta.titular} ---")
                     print("1. Sacar quantia")
+                    print("2. Depositar quantia")
                     print("6. Sair")
                     opcaoconta = int(input("Digite a opcao que deseja: "))
                     if opcaoconta == 1:
                         valor = float(input("Digite o valor que deseja sacar: "))
                         conta.sacar(valor)
+                    elif opcaoconta == 2:
+                        valor = float(input("Digite o valor que deseja depositar:"))
+                        conta.depositar(valor)
+                    
                     else:
                         print("Digite somente alguma das opcoes acima")
 
