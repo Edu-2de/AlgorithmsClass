@@ -171,7 +171,7 @@ def menu():
                         existe = True
                         break
                 if existe == False:
-                    x = Conta(titular, senha)
+                    x = ContaCorrente(titular, senha)
                     contas.append(x)
                     contasCorrente.append(x)
                     print(x)
@@ -186,7 +186,7 @@ def menu():
                         existe = True
                         break
                 if existe == False:
-                    x = Conta(titular, senha)
+                    x = ContaPoupanca(titular, senha)
                     contas.append(x)
                     contasPoupanca.append(x)
                     print(x)
