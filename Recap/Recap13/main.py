@@ -7,7 +7,8 @@ class Conta:
     def __init__(self, titular:str = None, senha:str = None,):
         self.id = Conta._contador_id
         Conta._contador_id += 1
-        self.__numero_conta = ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))        self._saldo = 0.0
+        self.__numero_conta = ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))        
+        self._saldo = 0.0
         self.titular = titular
         self.senha = senha
 
