@@ -313,7 +313,10 @@ def menu():
                                 print("Digite somente sim ou nao")
                         
                         elif contacorrente == True:
-                            print("A sua conta é do tipo poupanca")
+                            print("A sua conta é do tipo corrente")
+
+                            
+                            escolha = str(input("Deseja alterar o tipo de conta para conta Corrente (digite sim ou nao) ?"))
 
                                
 
