@@ -111,7 +111,7 @@ def menu():
                 print("\nVoce escolheu: Cadastrar livro ")
                 titulo = input("Qual o titulo do livro? ")
                 autor = input(f"Qual o autor de {titulo}? ")  
-                ano = input(f"Qual o ano em que {titulo} foi lancado?")
+                ano = input(f"Qual o ano em que {titulo} foi lancado? ")
                 livro = Livro(titulo, autor, ano)
                 print(f"\n{livro}")
                 
@@ -119,11 +119,11 @@ def menu():
                 if final_ou_comeco == "comeco":
                     lista.adicionar_comeco(livro)
                     print(f"O livro {titulo} foi adicionado no comeco da lista!")
-                    break
+             
                 elif final_ou_comeco == "final":
                     lista.adicionar(livro)
                     print(f"O livro {titulo} foi adicionado no final da lista!")
-                    break
+              
                 else:
                     print("Digite somente comeco ou final (desse jeito)")
             elif opcao_escolhida == "2":
