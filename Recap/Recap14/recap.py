@@ -61,6 +61,33 @@ class ListaLivro:
 
             aux = self.inicio
             while( aux ):
-                print( aux.dado , "\n" )
+                print( aux.livro , "\n" )
                 aux = aux.proximo
                 print( "Tamanho da Lista: " + str(self.tamanho ))
+
+    def exculir(self, valor):
+        if self.tamanho == 0:
+            print("A lista esta vazia")
+        elif self.tamanho == 1:
+            if self.inicio.livro == valor:
+                self.inicio = None
+                self.tamnho -= 1
+            else:
+                print("Valor nao encontrado")
+        else:
+            aux = self.inicio
+            if self.inicio.livro == valor:
+                aux = self.inicio.proximo
+                self.inicio = aux
+                self.tamanho -= 1
+            else:
+                ant = self.inicio
+                aux = ant.proximo
+                while (aux):
+                    if aux.livro == valor:
+                        ant.proximo = aux.proximo
+                        self.tamanho -= 1
+                    else:
+                        ant = aux
+                    aux = aux.proximo
+    
