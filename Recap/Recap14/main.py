@@ -46,8 +46,18 @@ class ListaLivro:
         self.tamanho = 0
 
     def adicionar_comeco(self, valor):
-        self.inicio = NoLivro( valor )
-        self.tamanho = self.tamanho + 1
+        if self.inicio:
+            novoinicio = NoLivro(valor)
+            novoinicio.proximo = self.inicio
+            self.inicio = novoinicio
+            self.tamanho += 1
+            print("O livro foi adicionado no comeco da lista!")
+        else:
+            self.inicio = NoLivro( valor )
+            self.tamanho += 1
+            print("O livro foi adicionado no comeco da lista!")
+            
+
 
     def adicionar(self, valor ):
         if self.inicio:
@@ -55,8 +65,10 @@ class ListaLivro:
             while( aux.proximo ):
                 aux = aux.proximo
             aux.proximo = NoLivro( valor )
+            print("O livro foi adicionado no final da lista!")
         else:
             self.inicio = NoLivro( valor )
+            print("O livro foi adicionado no comeco da lista! (porque ela estava vazia)")
         self.tamanho = self.tamanho + 1
 
     def imprimir(self):
