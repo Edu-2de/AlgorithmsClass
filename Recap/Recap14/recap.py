@@ -90,4 +90,24 @@ class ListaLivro:
                     else:
                         ant = aux
                     aux = aux.proximo
-    
+
+def menu():
+    while True:
+            print("\n--- livros ---")   
+            print("1. Cadastrar livro")
+            print("2. Entrar na Conta")
+            print("3. Exibir todas as Contas")
+            print("4. Exibir todas as Conats Corrente")
+            print("5. Exibir todas as Conats Poupanca")
+            opcao_escolhida = input("Digite a opcao que deseja: ")
+            if opcao_escolhida == "1":
+                print("\nVoce escolheu: Cadastrar livro ")
+                titulo = input("Qual o titulo do livro? ")
+                autor = input(f"Qual o autor de {titulo}? ")  
+                ano = input(f"Qual o ano em que {titulo} foi lancado?")
+                livro = Livro(titulo, autor, ano)
+                print(f"\n{livro}")
+                
+                final_ou_comeco = input("Voce deseja adicionar esse livro no comeco ou no final da lista? ")
+                if final_ou_comeco == "comeco":
+                    
