@@ -99,7 +99,7 @@ def menu():
     while True:
             print("\n--- livros ---")   
             print("1. Cadastrar livro")
-            print("2. Entrar na Conta")
+            print("2. Remover livro")
             print("3. Exibir todas as Contas")
             print("4. Exibir todas as Conats Corrente")
             print("5. Exibir todas as Conats Poupanca")
