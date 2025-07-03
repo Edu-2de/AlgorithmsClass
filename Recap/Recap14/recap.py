@@ -31,3 +31,6 @@ class Livro:
         self.autor = autor
         self.ano = ano
         self.codigo =  ''.join(random.choices(string.ascii_uppercase + string.digits, k=5)) 
+
+    def __str__(self):
+        return f"Livro: {self.titulo}, do autor: {self.autor}, do ano: {self.ano} e codigo {self.codigo}"
