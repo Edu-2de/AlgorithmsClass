@@ -117,7 +117,16 @@ class ListaLivro:
             else:
                 print("Esse livro nao esta na lista!")
         else: 
-            aux = self.inicio
+            ant = self.inicio
+            aux = ant.proximo
+            while (aux):
+                if aux.livro.titulo == valor or aux.livro.codigo == valor:
+                    print(aux.livro)
+                else:
+                    ant = aux
+                aux = aux.proximo
+                    
+            
 
 
 
