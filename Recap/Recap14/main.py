@@ -108,7 +108,7 @@ class ListaLivro:
                         ant = aux
                     aux = aux.proximo
                     print("Livro excluido com sucesso!")
-
+lista = ListaLivro()
 def menu():
     while True:
             print("\n--- livros ---")   
@@ -118,7 +118,7 @@ def menu():
             print("4. Exibir todas as Conats Corrente")
             print("5. Exibir todas as Conats Poupanca")
             opcao_escolhida = input("Digite a opcao que deseja: ")
-            lista = ListaLivro()
+          
             if opcao_escolhida == "1":
                 print("\nVoce escolheu: Cadastrar livro ")
                 titulo = input("Qual o titulo do livro? ")
