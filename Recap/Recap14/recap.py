@@ -34,3 +34,23 @@ class Livro:
 
     def __str__(self):
         return f"Livro: {self.titulo}, do autor: {self.autor}, do ano: {self.ano} e codigo {self.codigo}"
+    
+class NoLivro:
+    def __init__(self, livro):
+        self.livro = livro
+        self.proximo = None
+
+class ListaLivro:
+    def __init__(self):
+        self.inicio = None
+        self.tamanho = 0
+
+    def adicionar(self, valor ):
+        if self.inicio:
+            aux = self.inicio
+            while( aux.proximo ):
+                aux = aux.proximo
+            aux.proximo = NoLivro( valor )
+        else:
+            self.inicio = NoLivro( valor )
+        self.tamanho = self.tamanho + 1
