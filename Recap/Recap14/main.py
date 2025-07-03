@@ -102,7 +102,7 @@ def menu():
             print("\n--- livros ---")   
             print("1. Cadastrar livro")
             print("2. Remover livro")
-            print("3. Exibir todas as Contas")
+            print("3. Listar todos os livros")
             print("4. Exibir todas as Conats Corrente")
             print("5. Exibir todas as Conats Poupanca")
             opcao_escolhida = input("Digite a opcao que deseja: ")
@@ -130,6 +130,8 @@ def menu():
                 print("\nVoce escolheu: Remover livro ")
                 titulo = input("Qual o titulo do livro que voce deseja remover? ")
                 lista.exculir(titulo)
+            elif opcao_escolhida == "3":
+                lista.imprimir()
 
 
 
