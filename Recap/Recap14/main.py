@@ -56,8 +56,6 @@ class ListaLivro:
             self.inicio = NoLivro( valor )
             self.tamanho += 1
             print("O livro foi adicionado no comeco da lista!")
-            
-
 
     def adicionar(self, valor ):
         if self.inicio:
@@ -77,22 +75,22 @@ class ListaLivro:
 
         aux = self.inicio
         while( aux ):
-            print( aux.livro , "\n" )
+            print(  "\n", aux.livro , "\n" )
             aux = aux.proximo
-            print( "Tamanho da Lista: " + str(self.tamanho ))
+        print( "Tamanho da Lista: " + str(self.tamanho ))
 
     def exculir(self, valor):
         if self.tamanho == 0:
             print("A lista esta vazia")
         elif self.tamanho == 1:
-            if self.inicio.livro == valor:
+            if self.inicio.livro.codigo == valor:
                 self.inicio = None
                 self.tamnho -= 1
             else:
                 print("Valor nao encontrado")
         else:
             aux = self.inicio
-            if self.inicio.livro == valor:
+            if self.inicio.livro.codigo == valor:
                 aux = self.inicio.proximo
                 self.inicio = aux
                 self.tamanho -= 1
@@ -101,7 +99,7 @@ class ListaLivro:
                 ant = self.inicio
                 aux = ant.proximo
                 while (aux):
-                    if aux.livro == valor:
+                    if aux.livro.codigo == valor:
                         ant.proximo = aux.proximo
                         self.tamanho -= 1
                     else:
@@ -114,9 +112,9 @@ def menu():
             print("\n--- livros ---")   
             print("1. Cadastrar livro")
             print("2. Remover livro")
-            print("3. Listar todos os livros")
-            print("4. Exibir todas as Conats Corrente")
-            print("5. Exibir todas as Conats Poupanca")
+            print("3. Buscar livro")
+            print("4. Listar todos os livros")
+            print("5. Sair")
             opcao_escolhida = input("Digite a opcao que deseja: ")
           
             if opcao_escolhida == "1":
@@ -140,10 +138,17 @@ def menu():
                     print("Digite somente comeco ou final (desse jeito)")
             elif opcao_escolhida == "2":
                 print("\nVoce escolheu: Remover livro ")
-                titulo = input("Qual o titulo do livro que voce deseja remover? ")
-                lista.exculir(titulo)
+                codigo = input("Qual o codigo do livro que voce deseja remover? ")
+                lista.exculir(codigo)
             elif opcao_escolhida == "3":
+                titulo_ou_codigo = input("Digite o titulo ou codigo do livro que deseja ver: ")
+                lista.buscar(titulo_ou_codigo)
+            elif opcao_escolhida == "4":
                 lista.imprimir()
+
+            elif opcao_escolhida == "5":
+                break
+
 
 
 
