@@ -75,11 +75,11 @@ class ListaLivro:
         if self.inicio == None:
             print("Lista Vazia")
 
-            aux = self.inicio
-            while( aux ):
-                print( aux.titulo , "\n" )
-                aux = aux.proximo
-                print( "Tamanho da Lista: " + str(self.tamanho ))
+        aux = self.inicio
+        while( aux ):
+            print( aux.livro , "\n" )
+            aux = aux.proximo
+            print( "Tamanho da Lista: " + str(self.tamanho ))
 
     def exculir(self, valor):
         if self.tamanho == 0:
