@@ -45,6 +45,10 @@ class ListaLivro:
         self.inicio = None
         self.tamanho = 0
 
+    def adicionar_comeco(self, valor):
+        self.inicio = NoLivro( valor )
+        self.tamanho = self.tamanho + 1
+
     def adicionar(self, valor ):
         if self.inicio:
             aux = self.inicio
@@ -109,5 +113,16 @@ def menu():
                 print(f"\n{livro}")
                 
                 final_ou_comeco = input("Voce deseja adicionar esse livro no comeco ou no final da lista? ")
+                lista = ListaLivro()
                 if final_ou_comeco == "comeco":
-                    
+                    lista.adicionar_comeco(livro)
+                    print(f"O livro {titulo} foi adicionado no comeco da lista!")
+                    break
+                elif final_ou_comeco == "final":
+                    lista.adicionar(livro)
+                    print(f"O livro {titulo} foi adicionado no final da lista!")
+                    break
+                else:
+                    print("Digite somente comeco ou final (desse jeito)")
+
+
