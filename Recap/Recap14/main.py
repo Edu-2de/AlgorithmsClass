@@ -112,7 +112,7 @@ def menu():
                 livro = Livro(titulo, autor, ano)
                 print(f"\n{livro}")
                 
-                final_ou_comeco = input("Voce deseja adicionar esse livro no comeco ou no final da lista? ")
+                final_ou_comeco = input("\nVoce deseja adicionar esse livro no comeco ou no final da lista? ")
                 lista = ListaLivro()
                 if final_ou_comeco == "comeco":
                     lista.adicionar_comeco(livro)
@@ -124,5 +124,11 @@ def menu():
                     break
                 else:
                     print("Digite somente comeco ou final (desse jeito)")
+            elif opcao_escolhida == "2":
+                print("\nVoce escolheu: Remover livro ")
 
 
+
+
+if __name__ == "__main__":
+    menu()
