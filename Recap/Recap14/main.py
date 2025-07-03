@@ -84,6 +84,7 @@ class ListaLivro:
                 aux = self.inicio.proximo
                 self.inicio = aux
                 self.tamanho -= 1
+                print("Livro excluido com sucesso!")
             else:
                 ant = self.inicio
                 aux = ant.proximo
@@ -94,6 +95,7 @@ class ListaLivro:
                     else:
                         ant = aux
                     aux = aux.proximo
+                    print("Livro excluido com sucesso!")
 
 def menu():
     while True:
@@ -104,6 +106,7 @@ def menu():
             print("4. Exibir todas as Conats Corrente")
             print("5. Exibir todas as Conats Poupanca")
             opcao_escolhida = input("Digite a opcao que deseja: ")
+            lista = ListaLivro()
             if opcao_escolhida == "1":
                 print("\nVoce escolheu: Cadastrar livro ")
                 titulo = input("Qual o titulo do livro? ")
@@ -113,7 +116,6 @@ def menu():
                 print(f"\n{livro}")
                 
                 final_ou_comeco = input("\nVoce deseja adicionar esse livro no comeco ou no final da lista? ")
-                lista = ListaLivro()
                 if final_ou_comeco == "comeco":
                     lista.adicionar_comeco(livro)
                     print(f"O livro {titulo} foi adicionado no comeco da lista!")
@@ -126,6 +128,9 @@ def menu():
                     print("Digite somente comeco ou final (desse jeito)")
             elif opcao_escolhida == "2":
                 print("\nVoce escolheu: Remover livro ")
+                titulo = input("Qual o titulo do livro que voce deseja remover? ")
+                lista.exculir(titulo)
+
 
 
 
