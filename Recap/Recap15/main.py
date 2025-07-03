@@ -32,3 +32,10 @@ class Pessoa:
 
     def __str__(self):
         return f"{self.nome} de {self.idade} anos"
+    
+
+class NoPessoa:
+    def __init__(self, pessoa):
+        self.pessoa = pessoa
+        self.proximo = None
+        self.anterior = None
