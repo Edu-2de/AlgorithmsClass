@@ -54,3 +54,13 @@ class ListaLivro:
         else:
             self.inicio = NoLivro( valor )
         self.tamanho = self.tamanho + 1
+
+    def imprimir(self):
+        if self.inicio == None:
+            print("Lista Vazia")
+
+            aux = self.inicio
+            while( aux ):
+                print( aux.dado , "\n" )
+                aux = aux.proximo
+                print( "Tamanho da Lista: " + str(self.tamanho ))
