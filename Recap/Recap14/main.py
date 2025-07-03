@@ -106,6 +106,21 @@ class ListaLivro:
                         ant = aux
                     aux = aux.proximo
                     print("Livro excluido com sucesso!")
+
+
+    def buscar(self, valor):
+        if self.tamanho == 0:
+            print("A lista esta vazia")
+        elif self.tamanho == 1:
+            if self.inicio.livro.titulo == valor or self.inicio.livro.codigo == valor:
+                print(self.inicio.livro)
+            else:
+                print("Esse livro nao esta na lista!")
+        else: 
+            aux = self.inicio
+
+
+
 lista = ListaLivro()
 def menu():
     while True:
