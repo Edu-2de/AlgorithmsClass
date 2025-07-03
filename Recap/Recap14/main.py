@@ -77,7 +77,7 @@ class ListaLivro:
 
             aux = self.inicio
             while( aux ):
-                print( aux.livro , "\n" )
+                print( aux.titulo , "\n" )
                 aux = aux.proximo
                 print( "Tamanho da Lista: " + str(self.tamanho ))
 
