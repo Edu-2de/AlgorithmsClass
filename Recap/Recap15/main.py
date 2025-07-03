@@ -39,3 +39,31 @@ class NoPessoa:
         self.pessoa = pessoa
         self.proximo = None
         self.anterior = None
+
+class ListaPessoa:
+    def __init__(self):
+        self.inicio = None
+        self.tamanho = 0
+
+    def adicionar(self, pessoa):
+        if self.inicio:
+            aux = self.inicio
+            while (aux.proximo.idade < pessoa.idade):
+                aux = aux.proximo
+            aux.proximo = NoPessoa(pessoa)
+            print(f"A pessoa foi adicionada a fila, conforme sua idade")
+        else:
+            self.inicio = NoPessoa(pessoa)
+            print("A pessoa foi adicionada no comeco da fila")
+        self.tamanho = self.tamanho + 1
+
+    def imprimir(self):
+        if self.tamanho == 0:
+            print("A lista esta vazia!")
+        
+        aux = self.inicio
+        while (aux):
+            print("\n---- Fila ----")
+            print(  "\n", aux.pessoa.nome + " " + aux.pessoa.senha)
+            aux = aux.proximo
+
