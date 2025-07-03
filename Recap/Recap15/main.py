@@ -1,4 +1,5 @@
-
+import random
+import string
 
 class Pessoa:
     def __init__(self, nome:str = None, idade:int = 0):
