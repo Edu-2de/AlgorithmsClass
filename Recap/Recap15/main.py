@@ -29,3 +29,6 @@ class Pessoa:
         self.nome = nome
         self.idade = idade
         self.senha = ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
+
+    def __str__(self):
+        return f"{self.nome} de {self.idade} anos"
