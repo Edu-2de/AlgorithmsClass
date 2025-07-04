@@ -52,7 +52,7 @@ class ListaPessoa:
                 x = NoPessoa(pessoanova)
                 x.proximo = aux
                 self.inicio = x
-                return x
+                return "\nA pessoa foi adicionada no comeco da fila"
                 
             elif aux.proximo != None and aux.proximo.pessoa.idade >= 60:
                 while aux.proximo and aux.proximo.pessoa.idade >= 60:
@@ -63,10 +63,10 @@ class ListaPessoa:
                 while(aux.proximo):
                     aux = aux.proximo
                 aux.proximo = NoPessoa(pessoanova)
-            print(f"A pessoa foi adicionada a fila, conforme sua idade")
+            print(f"\nA pessoa foi adicionada a fila, conforme sua idade")
         else:
             self.inicio = NoPessoa(pessoanova)
-            print("A pessoa foi adicionada no comeco da fila")
+            print("\nA pessoa foi adicionada no comeco da fila")
         self.tamanho  += 1
 
     def imprimir(self):
@@ -74,15 +74,17 @@ class ListaPessoa:
             print("A lista esta vazia!")
         
         aux = self.inicio
+        contador = 0
+        print("\n---- Fila ----")
         while (aux):
-            print("\n---- Fila ----")
-            print(  "\n", aux.pessoa.nome + " " + aux.pessoa.idade + " anos e senha:"+ " " + aux.pessoa.senha)
+            contador += 1
+            print(  f"\n{contador}. {aux.pessoa.nome}  {aux.pessoa.idade}  anos e senha: {aux.pessoa.senha}" )
             aux = aux.proximo
 
 lista = ListaPessoa()
 def menu():
     while True:
-        print("\n============= FILA =================")
+        print("\n============= FILA =============")
         print("1. Inserir na fila")
         print("2. Chamar proxima pessoa")
         print("3. Listar fila")
@@ -92,11 +94,13 @@ def menu():
         
         opcao = input("\nDigite a opcao que deseja: ")
         if opcao == "1":
-            print("\n voce escolheu: 1. Inserir na fila")
+            print("\n========voce escolheu: 1. Inserir na fila========")
 
             nome = input("\nDigite seu nome: ")
-            idade = input("Digite sua idade: ")
+            idade = int(input("Digite sua idade: "))
+            
             pessoa = Pessoa(nome, idade)
+
             print(pessoa)
             print(f"\n {lista.adicionar(pessoa)}")
         elif opcao == "3":
