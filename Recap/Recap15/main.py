@@ -45,15 +45,18 @@ class ListaPessoa:
         self.inicio = None
         self.tamanho = 0
 
-    def adicionar(self, pessoa):
+    def adicionar(self, pessoanova):
         if self.inicio:
             aux = self.inicio
-            while (aux.proximo.idade < pessoa.idade):
+            if pessoanova.idade >= 60:
+                while (aux.proximo.pessoa.idade >= 60):
+                    aux = aux.proximo
+            while (aux.proximo):
                 aux = aux.proximo
-            aux.proximo = NoPessoa(pessoa)
+            aux.proximo = NoPessoa(pessoanova)
             print(f"A pessoa foi adicionada a fila, conforme sua idade")
         else:
-            self.inicio = NoPessoa(pessoa)
+            self.inicio = NoPessoa(pessoanova)
             print("A pessoa foi adicionada no comeco da fila")
         self.tamanho = self.tamanho + 1
 
