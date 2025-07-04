@@ -76,6 +76,6 @@ class ListaPessoa:
         aux = self.inicio
         while (aux):
             print("\n---- Fila ----")
-            print(  "\n", aux.pessoa.nome + " " + aux.pessoa.senha)
+            print(  "\n", aux.pessoa.nome + " " + aux.pessoa.idade + " anos e senha:"+ " " + aux.pessoa.senha)
             aux = aux.proximo
 
