@@ -49,11 +49,12 @@ class ListaPessoa:
         if self.inicio:
             aux = self.inicio
             if pessoanova.idade >= 60:
-                if aux.proximo:
+                while (aux.proximo):
                     while (aux.proximo.pessoa.idade >= 60):
                         aux = aux.proximo
-            while (aux.proximo):
-                aux = aux.proximo
+            else:
+                while(aux.proximo):
+                    aux = aux.proximo
             aux.proximo = NoPessoa(pessoanova)
             print(f"A pessoa foi adicionada a fila, conforme sua idade")
         else:
