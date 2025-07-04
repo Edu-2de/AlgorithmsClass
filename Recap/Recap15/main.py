@@ -78,9 +78,12 @@ class ListaPessoa:
 
     def buscar(self,senha_digitada):
         aux = self.inicio
-        while(aux.proximo and aux.pessoa.senha != senha_digitada):
+        while(aux and aux.pessoa.senha != senha_digitada):
             aux = aux.proximo
-        print(aux)
+        if aux != None:
+            print(aux.pessoa)
+        else:
+            print("Senha nao encontrada!")
 
 
     def imprimir(self):
