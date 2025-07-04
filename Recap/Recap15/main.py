@@ -76,16 +76,19 @@ class ListaPessoa:
             print("\nA pessoa foi adicionada no comeco da fila")
         self.tamanho  += 1
 
+    def buscar(self,valor):
+        
+
     def imprimir(self):
         if self.tamanho == 0:
             print("A lista esta vazia!")
         
         aux = self.inicio
         contador = 0
-        print("\n============= FILA =============")
+        print("\n============= FILA =============\n")
         while (aux):
             contador += 1
-            print(  f"\n{contador}. {aux.pessoa.nome}{aux.pessoa.idade} anos e senha: {aux.pessoa.senha}" )
+            print(  f"{contador}. {aux.pessoa.nome}{aux.pessoa.idade} anos e senha: {aux.pessoa.senha}" )
             aux = aux.proximo
         
 
