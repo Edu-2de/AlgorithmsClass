@@ -48,10 +48,17 @@ class ListaPessoa:
     def adicionar(self, pessoanova):
         if self.inicio:
             aux = self.inicio
-            if pessoanova.idade >= 60:
-                while (aux.proximo):
-                    while (aux.proximo.pessoa.idade >= 60):
-                        aux = aux.proximo
+            if self.inicio.pessoa.idade < 60 and pessoanova.idade >= 60:
+                x = NoPessoa(pessoanova)
+                x.proximo = aux
+                self.inicio = x
+                return x
+                
+            elif aux.proximo != None and aux.proximo.pessoa.idade >= 60:
+                while aux.proximo and aux.proximo.pessoa.idade >= 60:
+                    aux = aux.proximo
+                    
+                aux.proximo = NoPessoa(pessoanova)
             else:  
                 while(aux.proximo):
                     aux = aux.proximo
