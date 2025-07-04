@@ -49,8 +49,9 @@ class ListaPessoa:
         if self.inicio:
             aux = self.inicio
             if pessoanova.idade >= 60:
-                while (aux.proximo.pessoa.idade >= 60):
-                    aux = aux.proximo
+                if aux.proximo:
+                    while (aux.proximo.pessoa.idade >= 60):
+                        aux = aux.proximo
             while (aux.proximo):
                 aux = aux.proximo
             aux.proximo = NoPessoa(pessoanova)
