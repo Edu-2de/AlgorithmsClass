@@ -85,7 +85,7 @@ class ListaPessoa:
         print("\n============= FILA =============")
         while (aux):
             contador += 1
-            print(  f"\n{contador}. {aux.pessoa.nome} {aux.pessoa.idade} anos e senha: {aux.pessoa.senha}" )
+            print(  f"\n{contador}. {aux.pessoa.nome}{aux.pessoa.idade} anos e senha: {aux.pessoa.senha}" )
             aux = aux.proximo
         
 
