@@ -48,22 +48,29 @@ class ListaPessoa:
     def adicionar(self, pessoanova):
         if self.inicio:
             aux = self.inicio
-            if self.inicio.pessoa.idade < 60 and pessoanova.idade >= 60:
-                x = NoPessoa(pessoanova)
-                x.proximo = aux
-                self.inicio = x
-                return "\nA pessoa foi adicionada no comeco da fila"
+            if pessoanova.idade >= 60:
+                if self.inicio.pessoa.idade < 60:
+                    x = NoPessoa(pessoanova)
+                    x.proximo = aux
+                    self.inicio = x
+                    return "\nA pessoa prioritaria foi adicionada no comeco da fila"
                 
-            elif aux.proximo != None and aux.proximo.pessoa.idade >= 60:
-                while aux.proximo and aux.proximo.pessoa.idade >= 60:
-                    aux = aux.proximo
-                    
-                aux.proximo = NoPessoa(pessoanova)
-            else:  
+                elif self.inicio.pessoa.idade >=60:
+                    while aux.proximo and aux.proximo.pessoa.idade >= 60:
+                        aux = aux.proximo
+                    x = NoPessoa(pessoanova)
+                    x.proximo = aux.proximo
+                    aux.proximo = x
+                 
+                    print(f"\nA pessoa prioritaria foi adicionada a fila, conforme sua idade")
+
+              
+            else:
                 while(aux.proximo):
                     aux = aux.proximo
                 aux.proximo = NoPessoa(pessoanova)
-            print(f"\nA pessoa foi adicionada a fila, conforme sua idade")
+                print(f"\nA pessoa foi adicionada no final da fila")
+                
         else:
             self.inicio = NoPessoa(pessoanova)
             print("\nA pessoa foi adicionada no comeco da fila")
@@ -75,22 +82,24 @@ class ListaPessoa:
         
         aux = self.inicio
         contador = 0
-        print("\n---- Fila ----")
+        print("\n============= FILA =============")
         while (aux):
             contador += 1
-            print(  f"\n{contador}. {aux.pessoa.nome}  {aux.pessoa.idade}  anos e senha: {aux.pessoa.senha}" )
+            print(  f"\n{contador}. {aux.pessoa.nome} {aux.pessoa.idade} anos e senha: {aux.pessoa.senha}" )
             aux = aux.proximo
+        
 
 lista = ListaPessoa()
 def menu():
     while True:
-        print("\n============= FILA =============")
+        print("\n============= MENU =============")
         print("1. Inserir na fila")
         print("2. Chamar proxima pessoa")
         print("3. Listar fila")
         print("4. Buscar pessoa pela senha")
         print("5. Remover pessoa pela senha")
         print("6. Sair")
+        print("================================")
         
         opcao = input("\nDigite a opcao que deseja: ")
         if opcao == "1":
