@@ -99,6 +99,8 @@ def menu():
             pessoa = Pessoa(nome, idade)
             print(pessoa)
             print(f"\n {lista.adicionar(pessoa)}")
+        elif opcao == "3":
+            lista.imprimir()
 
         
 
