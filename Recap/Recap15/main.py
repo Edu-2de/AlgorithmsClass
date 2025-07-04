@@ -79,3 +79,28 @@ class ListaPessoa:
             print(  "\n", aux.pessoa.nome + " " + aux.pessoa.idade + " anos e senha:"+ " " + aux.pessoa.senha)
             aux = aux.proximo
 
+lista = ListaPessoa()
+def menu():
+    while True:
+        print("\n============= FILA =================")
+        print("1. Inserir na fila")
+        print("2. Chamar proxima pessoa")
+        print("3. Listar fila")
+        print("4. Buscar pessoa pela senha")
+        print("5. Remover pessoa pela senha")
+        print("6. Sair")
+        
+        opcao = input("\nDigite a opcao que deseja: ")
+        if opcao == "1":
+            print("\n voce escolheu: 1. Inserir na fila")
+
+            nome = input("\nDigite seu nome: ")
+            idade = input("Digite sua idade: ")
+            pessoa = Pessoa(nome, idade)
+            print(pessoa)
+            print(f"\n {lista.adicionar(pessoa)}")
+
+        
+
+if __name__ == "__main__":
+    menu()
