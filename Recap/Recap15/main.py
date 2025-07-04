@@ -76,8 +76,12 @@ class ListaPessoa:
             print("\nA pessoa foi adicionada no comeco da fila")
         self.tamanho  += 1
 
-    def buscar(self,valor):
-        
+    def buscar(self,senha_digitada):
+        aux = self.inicio
+        while(aux.proximo and aux.pessoa.senha != senha_digitada):
+            aux = aux.proximo
+        print(aux)
+
 
     def imprimir(self):
         if self.tamanho == 0:
