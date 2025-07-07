@@ -77,7 +77,14 @@ class ListaPessoa:
         self.tamanho  += 1
 
     def chamarproximo(self):
-        
+        if self.inicio:
+            aux = self.inicio
+            while(aux.proximo):
+                aux = aux.proximo
+            aux.proximo = None
+        else:
+            'A lista esta vazia, nao ha mais ninguem para chamar!'
+
 
     def buscar(self,senha_digitada):
         aux = self.inicio
