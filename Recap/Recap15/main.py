@@ -90,8 +90,8 @@ class ListaPessoa:
 
 
     def imprimir(self):
-        if self.tamanho == 0:
-            print("A lista esta vazia!")
+        if self.inicio == None:
+            print("\nA lista esta vazia!")
         
         aux = self.inicio
         contador = 0
