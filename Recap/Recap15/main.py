@@ -172,7 +172,8 @@ def menu():
         elif opcao == "3":
             lista.imprimir()
         elif opcao == "4":
-            lista.buscar()
+            senha = input("Digite a senha que deseja remover: ")
+            lista.buscar(senha)
         elif opcao == "5":
             senha = input("Digite a senha que deseja remover: ")
             lista.removerPelaSenha(senha)
