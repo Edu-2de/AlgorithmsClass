@@ -172,7 +172,9 @@ def menu():
 
             lista.chamarProximo()
         elif opcao == "3":
-            print("\n====OPCAO ESCOLHIDA: 3.Listar fila====")
+            print("\n================================")
+            print("OPCAO ESCOLHIDA: 3.Listar fila")
+            print("================================")
 
             lista.imprimir()
         elif opcao == "4":
