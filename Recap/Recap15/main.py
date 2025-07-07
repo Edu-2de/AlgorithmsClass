@@ -158,7 +158,7 @@ def menu():
         
         opcao = input("\nDigite a opcao que deseja: ")
         if opcao == "1":
-            print("\n========voce escolheu: 1. Inserir na fila========")
+            print("\n====voce escolheu: 1. Inserir na fila====")
 
             nome = input("\nDigite seu nome: ")
             idade = int(input("Digite sua idade: "))
@@ -168,26 +168,26 @@ def menu():
             print(pessoa)
             print(f"\n {lista.adicionar(pessoa)}")
         elif opcao == "2":
-            print("\n========voce escolheu: 2. Chamar proxima pessoa========")
+            print("\n====OPCAO ESCOLHIDA: 2. Chamar proxima pessoa====")
 
             lista.chamarProximo()
         elif opcao == "3":
-            print("\n========voce escolheu: 3. Listar fila========")
+            print("\n====voce escolheu: 3. Listar fila====")
 
             lista.imprimir()
         elif opcao == "4":
-            print("\n========voce escolheu: 4. Buscar pessoa pela senha========")
+            print("\n====voce escolheu: 4. Buscar pessoa pela senha====")
 
             senha = input("\nDigite a senha que deseja buscar: ")
             lista.buscar(senha)
         elif opcao == "5":
-            print("\n========voce escolheu: 5. Remover pessoa pela senha========")
+            print("\n====voce escolheu: 5. Remover pessoa pela senha====")
 
 
             senha = input("\nDigite a senha que deseja remover: ")
             lista.removerPelaSenha(senha)
         elif opcao == "6":
-            print("\n========voce escolheu: 6. Sair========")
+            print("\n====voce escolheu: 6. Sair====")
             break
         else:
             print("\nDigite somente opcoes validas!")
