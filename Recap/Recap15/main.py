@@ -81,7 +81,8 @@ class ListaPessoa:
             aux = self.inicio
             while(aux.proximo):
                 aux = aux.proximo
-            aux.proximo = None
+            print (f"{aux.pessoa}, é sua vez!")
+            aux = None
         else:
             'A lista esta vazia, nao ha mais ninguem para chamar!'
 
