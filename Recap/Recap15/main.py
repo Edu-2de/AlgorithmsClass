@@ -113,6 +113,22 @@ class ListaPessoa:
 
 
     def removerPelaSenha(self, senha_digitada):
+        if self.inicio:
+            aux = self.inicio
+            while(aux and aux.pessoa.senha != senha_digitada):
+                aux = aux.proximo
+            if self.tamanho == 1 and aux != None:
+                self.inicio = self.inicio.proximo
+                self.tamanho -= 1
+            elif self.tamanho > 1 and aux != None:
+                pessoaremovida = aux
+                pessoaremovida.anterior.proximo = pessoaremovida.proximo
+                self.tamanho -= 1
+
+            else: 
+                print("Senha nao encontrada!")
+        else:
+            print("A fila esta vazia")
 
 
 
