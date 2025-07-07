@@ -103,13 +103,16 @@ class ListaPessoa:
 
 
     def buscar(self,senha_digitada):
-        aux = self.inicio
-        while(aux and aux.pessoa.senha != senha_digitada):
-            aux = aux.proximo
-        if aux != None:
-            print(aux.pessoa)
+        if self.inicio:
+            aux = self.inicio
+            while(aux and aux.pessoa.senha != senha_digitada):
+                aux = aux.proximo
+            if aux != None:
+                print(aux.pessoa)
+            else:
+                print("Senha nao encontrada!")
         else:
-            print("Senha nao encontrada!")
+            print("A fila esta vazia")
 
 
     def removerPelaSenha(self, senha_digitada):
@@ -171,6 +174,9 @@ def menu():
         elif opcao == "4":
             lista.buscar()
         elif opcao == "5":
+            senha = input("Digite a senha que deseja remover: ")
+            lista.removerPelaSenha(senha)
+        
 
 
 
