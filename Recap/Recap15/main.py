@@ -135,12 +135,12 @@ def menu():
 
             print(pessoa)
             print(f"\n {lista.adicionar(pessoa)}")
-        elif opcao == "3":
+        elif opcao == "2":
             lista.chamarproximo()
-        elif opcao == "4":
+        elif opcao == "3":
             lista.imprimir()
-        elif opcao == "5":
-            
+        elif opcao == "4":
+
 
         
 
