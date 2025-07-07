@@ -86,16 +86,6 @@ class ListaPessoa:
             print('A lista esta vazia, nao ha mais ninguem para chamar!')
 
 
-    def buscar(self,senha_digitada):
-        aux = self.inicio
-        while(aux and aux.pessoa.senha != senha_digitada):
-            aux = aux.proximo
-        if aux != None:
-            print(aux.pessoa)
-        else:
-            print("Senha nao encontrada!")
-
-
     def imprimir(self):
         if self.tamanho == 0:
             print("A lista esta vazia!")
@@ -107,6 +97,19 @@ class ListaPessoa:
             contador += 1
             print(  f"{contador}. {aux.pessoa.nome}{aux.pessoa.idade} anos e senha: {aux.pessoa.senha}" )
             aux = aux.proximo
+
+
+    def buscar(self,senha_digitada):
+        aux = self.inicio
+        while(aux and aux.pessoa.senha != senha_digitada):
+            aux = aux.proximo
+        if aux != None:
+            print(aux.pessoa)
+        else:
+            print("Senha nao encontrada!")
+
+
+ 
         
 
 lista = ListaPessoa()
