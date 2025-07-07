@@ -158,8 +158,9 @@ def menu():
         
         opcao = input("\nDigite a opcao que deseja: ")
         if opcao == "1":
-            print("\n====OPCAO ESCOLHIDA: 1.Inserir na fila====")
-
+            print("\n================================")
+            print("OPCAO ESCOLHIDA: 1.Inserir na fila")
+            print("================================")
             nome = input("\nDigite seu nome: ")
             idade = int(input("Digite sua idade: "))
     
@@ -168,7 +169,9 @@ def menu():
             print(pessoa)
             print(f"\n {lista.adicionar(pessoa)}")
         elif opcao == "2":
-            print("\n====OPCAO ESCOLHIDA: 2.Chamar proxima pessoa====")
+            print("\n================================")
+            print("OPCAO ESCOLHIDA: 2.Chamar proxima pessoa")
+            print("================================")
 
             lista.chamarProximo()
         elif opcao == "3":
@@ -193,7 +196,9 @@ def menu():
             senha = input("\nDigite a senha que deseja remover: ")
             lista.removerPelaSenha(senha)
         elif opcao == "6":
-            print("\n====OPCAO ESCOLHIDA: 6.Sair====")
+            print("\n================================")
+            print("OPCAO ESCOLHIDA: 6.Sair")
+            print("================================")
             break
         else:
             print("\nDigite somente opcoes validas!")
