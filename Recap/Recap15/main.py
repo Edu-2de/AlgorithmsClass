@@ -140,6 +140,7 @@ def menu():
         elif opcao == "3":
             lista.imprimir()
         elif opcao == "4":
+            lista.buscar()
 
 
         
