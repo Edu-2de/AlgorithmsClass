@@ -172,11 +172,11 @@ def menu():
 
             lista.chamarProximo()
         elif opcao == "3":
-            print("\n====voce escolheu: 3. Listar fila====")
+            print("\n====OPCAO ESCOLHIDA: 3.Listar fila====")
 
             lista.imprimir()
         elif opcao == "4":
-            print("\n====voce escolheu: 4. Buscar pessoa pela senha====")
+            print("\n====OPCAO ESCOLHIDA: 4. Buscar pessoa pela senha====")
 
             senha = input("\nDigite a senha que deseja buscar: ")
             lista.buscar(senha)
