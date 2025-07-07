@@ -76,6 +76,9 @@ class ListaPessoa:
             print("\nA pessoa foi adicionada no comeco da fila")
         self.tamanho  += 1
 
+    def chamarproximo(self):
+        
+
     def buscar(self,senha_digitada):
         aux = self.inicio
         while(aux and aux.pessoa.senha != senha_digitada):
@@ -123,6 +126,9 @@ def menu():
             print(pessoa)
             print(f"\n {lista.adicionar(pessoa)}")
         elif opcao == "3":
+            
+
+        elif opcao == "4":
             lista.imprimir()
 
         
