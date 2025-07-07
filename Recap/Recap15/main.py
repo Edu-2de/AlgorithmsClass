@@ -176,12 +176,12 @@ def menu():
 
             lista.imprimir()
         elif opcao == "4":
-            print("\n====OPCAO ESCOLHIDA: 4. Buscar pessoa pela senha====")
+            print("\n====OPCAO ESCOLHIDA: 4.Buscar pessoa pela senha====")
 
             senha = input("\nDigite a senha que deseja buscar: ")
             lista.buscar(senha)
         elif opcao == "5":
-            print("\n====voce escolheu: 5. Remover pessoa pela senha====")
+            print("\n====OPCAO ESCOLHIDA: 5. Remover pessoa pela senha====")
 
 
             senha = input("\nDigite a senha que deseja remover: ")
