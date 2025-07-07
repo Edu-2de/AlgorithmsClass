@@ -96,7 +96,7 @@ class ListaPessoa:
             print("\n============= FILA =============\n")
             while (aux):
                 contador += 1
-                print(  f"{contador}. {aux.pessoa.nome}{aux.pessoa.idade} anos e senha: {aux.pessoa.senha}" )
+                print(  f"{contador}. {aux.pessoa.nome} {aux.pessoa.idade} anos e senha: {aux.pessoa.senha}" )
                 aux = aux.proximo
         else:
             print("\nA lista esta vazia!")
