@@ -24,6 +24,7 @@ Remover pessoa pela senha
 Sair
 '''
 
+
 class Pessoa:
     def __init__(self, nome:str = None, idade:int = 0):
         self.nome = nome
@@ -39,6 +40,7 @@ class NoPessoa:
         self.pessoa = pessoa
         self.proximo = None
         self.anterior = None
+
 
 class ListaPessoa:
     def __init__(self):
