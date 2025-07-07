@@ -76,6 +76,7 @@ class ListaPessoa:
             print("\nA pessoa foi adicionada no comeco da fila")
         self.tamanho  += 1
 
+
     def chamarProximo(self):
         if self.inicio:
             aux = self.inicio
@@ -107,6 +108,7 @@ class ListaPessoa:
             print(aux.pessoa)
         else:
             print("Senha nao encontrada!")
+
 
     def removerPelaSenha(self, senha_digitada):
 
