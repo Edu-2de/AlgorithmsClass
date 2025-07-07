@@ -110,9 +110,9 @@ class ListaPessoa:
             if aux != None:
                 print(aux.pessoa)
             else:
-                print("Senha nao encontrada!")
+                print("\nSenha nao encontrada!")
         else:
-            print("A fila esta vazia")
+            print("\nA fila esta vazia")
 
 
     def removerPelaSenha(self, senha_digitada):
@@ -127,17 +127,17 @@ class ListaPessoa:
             if atual == self.inicio:
                 self.inicio = self.inicio.proximo
                 self.tamanho -= 1
-                print(f"Pessoa: {atual.pessoa} foi removido(a) com sucesso!")
+                print(f"\nPessoa: {atual.pessoa} foi removido(a) com sucesso!")
 
             elif atual != None:
                 anterior.proximo = atual.proximo
                 self.tamanho -= 1
-                print(f"Pessoa: {atual.pessoa} foi removido(a) com sucesso!")
+                print(f"\nPessoa: {atual.pessoa} foi removido(a) com sucesso!")
 
             else: 
-                print("Senha nao encontrada!")
+                print("\nSenha nao encontrada!")
         else:
-            print("A fila esta vazia")
+            print("\nA fila esta vazia")
 
 
 
