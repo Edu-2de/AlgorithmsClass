@@ -83,7 +83,7 @@ class ListaPessoa:
             self.inicio = self.inicio.proximo
             self.tamanho -= 1
         else:
-            'A lista esta vazia, nao ha mais ninguem para chamar!'
+            print('A lista esta vazia, nao ha mais ninguem para chamar!')
 
 
     def buscar(self,senha_digitada):
