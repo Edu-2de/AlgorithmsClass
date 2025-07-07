@@ -176,7 +176,9 @@ def menu():
 
             lista.imprimir()
         elif opcao == "4":
-            print("\n====OPCAO ESCOLHIDA: 4.Buscar pessoa pela senha====")
+            print("\n================================")
+            print("OPCAO ESCOLHIDA: 4.Buscar pessoa pela senha")
+            print("================================")
 
             senha = input("\nDigite a senha que deseja buscar: ")
             lista.buscar(senha)
