@@ -90,16 +90,18 @@ class ListaPessoa:
 
 
     def imprimir(self):
-        if self.inicio == None:
+        if self.inicio:
+            aux = self.inicio
+            contador = 0
+            print("\n============= FILA =============\n")
+            while (aux):
+                contador += 1
+                print(  f"{contador}. {aux.pessoa.nome}{aux.pessoa.idade} anos e senha: {aux.pessoa.senha}" )
+                aux = aux.proximo
+        else:
             print("\nA lista esta vazia!")
         
-        aux = self.inicio
-        contador = 0
-        print("\n============= FILA =============\n")
-        while (aux):
-            contador += 1
-            print(  f"{contador}. {aux.pessoa.nome}{aux.pessoa.idade} anos e senha: {aux.pessoa.senha}" )
-            aux = aux.proximo
+        
 
 
     def buscar(self,senha_digitada):
