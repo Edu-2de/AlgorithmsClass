@@ -136,10 +136,11 @@ def menu():
             print(pessoa)
             print(f"\n {lista.adicionar(pessoa)}")
         elif opcao == "3":
-            
-
+            lista.chamarproximo()
         elif opcao == "4":
             lista.imprimir()
+        elif opcao == "5":
+            
 
         
 
