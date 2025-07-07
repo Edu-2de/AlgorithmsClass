@@ -181,7 +181,9 @@ def menu():
             senha = input("\nDigite a senha que deseja buscar: ")
             lista.buscar(senha)
         elif opcao == "5":
-            print("\n====OPCAO ESCOLHIDA: 5.Remover pessoa pela senha====")
+            print("\n================================")
+            print("OPCAO ESCOLHIDA: 5.Remover pessoa pela senha")
+            print("================================")
 
 
             senha = input("\nDigite a senha que deseja remover: ")
