@@ -76,7 +76,7 @@ class ListaPessoa:
             print("\nA pessoa foi adicionada no comeco da fila")
         self.tamanho  += 1
 
-    def chamarproximo(self):
+    def chamarProximo(self):
         if self.inicio:
             aux = self.inicio
             print (f"{aux.pessoa}, é sua vez!")
@@ -108,6 +108,9 @@ class ListaPessoa:
         else:
             print("Senha nao encontrada!")
 
+    def removerPelaSenha(self, senha_digitada):
+
+
 
  
         
@@ -136,11 +139,13 @@ def menu():
             print(pessoa)
             print(f"\n {lista.adicionar(pessoa)}")
         elif opcao == "2":
-            lista.chamarproximo()
+            lista.chamarProximo()
         elif opcao == "3":
             lista.imprimir()
         elif opcao == "4":
             lista.buscar()
+        elif opcao == "5":
+
 
 
         
