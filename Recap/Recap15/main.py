@@ -80,7 +80,8 @@ class ListaPessoa:
         if self.inicio:
             aux = self.inicio
             print (f"{aux.pessoa}, é sua vez!")
-            aux.proximo = self.inicio
+            self.inicio = self.inicio.proximo
+            self.tamanho -= 1
         else:
             'A lista esta vazia, nao ha mais ninguem para chamar!'
 
