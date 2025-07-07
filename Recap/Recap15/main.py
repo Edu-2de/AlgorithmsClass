@@ -187,7 +187,7 @@ def menu():
             senha = input("\nDigite a senha que deseja remover: ")
             lista.removerPelaSenha(senha)
         elif opcao == "6":
-            print("\n====voce escolheu: 6. Sair====")
+            print("\n====OPCAO ESCOLHIDA: 6.Sair====")
             break
         else:
             print("\nDigite somente opcoes validas!")
