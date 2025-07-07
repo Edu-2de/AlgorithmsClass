@@ -114,21 +114,19 @@ class ListaPessoa:
 
     def removerPelaSenha(self, senha_digitada):
         if self.inicio:
-            aux = self.inicio
-            aux1 = self.inicio
+            anterior = None
+            atual = self.inicio
                 
-            while(aux and aux.pessoa.senha != senha_digitada):
-                aux = aux.proximo
-                aux1 = aux1.proximo
-            atual = aux
-            anterior = aux1
+            while(atual and atual.pessoa.senha != senha_digitada):
+                anterior = atual
+                atual = atual.proximo
 
-            if aux == self.inicio:
+            if atual == self.inicio:
                 self.inicio = self.inicio.proximo
                 self.tamanho -= 1
                 print(f"Pessoa: {atual.pessoa} foi removido(a) com sucesso!")
 
-            elif self.tamanho > 1 and aux != None:
+            elif atual != None:
                 anterior.proximo = atual.proximo
                 self.tamanho -= 1
                 print(f"Pessoa: {atual.pessoa} foi removido(a) com sucesso!")
