@@ -162,17 +162,21 @@ def menu():
 
             nome = input("\nDigite seu nome: ")
             idade = int(input("Digite sua idade: "))
-            
+    
             pessoa = Pessoa(nome, idade)
 
             print(pessoa)
             print(f"\n {lista.adicionar(pessoa)}")
         elif opcao == "2":
+            print("\n========voce escolheu: 2. Chamar proxima pessoa========")
+
             lista.chamarProximo()
         elif opcao == "3":
+            print("\n========voce escolheu: 3. Listar fila========")
+
             lista.imprimir()
         elif opcao == "4":
-            senha = input("Digite a senha que deseja remover: ")
+            senha = input("Digite a senha que deseja buscar: ")
             lista.buscar(senha)
         elif opcao == "5":
             senha = input("Digite a senha que deseja remover: ")
