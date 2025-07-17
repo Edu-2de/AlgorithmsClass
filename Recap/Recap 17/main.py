@@ -10,12 +10,12 @@ class CharacterNo:
     self.character = character
     self.next = None
     self.previous = None
-    self.cursor = None
 
 class ListCharacter:
   def __init__(self):
     self.start = None
     self.length = 0
+    self.cursor = None
 
   def add(self, newCharacter):
     if self.start:
