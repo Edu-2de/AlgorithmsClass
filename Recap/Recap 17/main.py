@@ -25,8 +25,7 @@ class ListCharacter:
         if beforeOrAfter == "before":
           self.start = char
           char.next = aux
-          aux = aux.next
-          
+          aux.previous = char
         elif beforeOrAfter == "after":
           aux.next = char
           char.previous = aux
