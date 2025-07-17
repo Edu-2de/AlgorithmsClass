@@ -35,11 +35,11 @@ class ListCharacter:
         if aux != None:
           char = CharacterNo(newCharacter)
           if beforeOrAfter == "before":
-            
+            aux.previous = char
+            char.next = aux
           elif beforeOrAfter == "after":
-            aux.previous.next = aux.next
-            if aux.next:
-              aux.next.previous = aux.previous
+            aux.next = char
+            char.previous = aux
 
     else:
       char = CharacterNo(newCharacter)
