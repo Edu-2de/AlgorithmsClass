@@ -11,3 +11,8 @@ class CharacterNo:
     self.next = None
     self.previous = None
     self.cursor = None
+
+class ListCharacter:
+  def __init__(self):
+    self.start = None
+    self.length = 0
