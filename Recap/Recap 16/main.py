@@ -106,3 +106,20 @@ class MusicList:
         print('There are no more songs to come back to')
     else:
       print('The list is empty')
+
+musics = MusicList()
+
+def menu():
+  while True:
+    print("\n============= MENU =============")
+    print("1. Add a music to the end of the playlist.")
+    print("2. Remove a music by code. Search for a song by title.")
+    print("3. List all songs in the playlist")
+    print("4. Skip to the next song and skip to the previous one ")
+    print("5. exit")
+    print("================================")
+    choice = input("Choice: ")
+    if choice == '1':
+      title = input("")
+      artist = input("")
+      duration = input("")
