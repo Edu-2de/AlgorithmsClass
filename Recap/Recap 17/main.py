@@ -19,7 +19,13 @@ class ListCharacter:
 
   def add(self, newCharacter):
     if self.start:
-      
+      aux = self.start
+      if self.cursor == aux:
+        char = CharacterNo(newCharacter)
+        aux = aux.next
+        self.start = char
+        char.next = aux
+
     else:
       char = CharacterNo(newCharacter)
       self.start = char
