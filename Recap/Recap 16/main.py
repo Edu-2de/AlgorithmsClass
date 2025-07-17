@@ -125,13 +125,25 @@ def menu():
       artist = input("Artist: ")
       duration = input("Duration(in seconds): ")
       newMusic = Music(title, artist, duration)
-      musics.add(newMusic)
-      break
+      print(musics.add(newMusic))
     elif choice == '2':
       code = input("Code: ")
       musics.removeByCode(code)
-      break
-    elif choice
+    elif choice == '3':
+      title = input("Title: ")
+      print(musics.searchByTitle(title))
+    elif choice == '4':
+      print('Do you want to list the songs from beginning to end or from end to beginning?')
+      print('Type beginning or end')
+      beginningOrEnd = input("Choice: ")
+      if beginningOrEnd == "beginning":
+        print(musics.listByStart())
+      elif beginningOrEnd == "end":
+        print(musics.listByEnd())
+      else:
+        print("error, (you need type beginning or end)")
+    elif choice == '5':
+      
 
 
       
