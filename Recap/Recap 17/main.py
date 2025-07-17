@@ -28,7 +28,8 @@ class ListCharacter:
           aux.previous = char
         elif beforeOrAfter == "after":
           aux.next = char
-          aux.next.previous = char
+          if aux.next:
+            aux.next.previous = char
           char.previous = aux
       else:
         while aux and aux != self.cursor:
@@ -38,7 +39,10 @@ class ListCharacter:
           if beforeOrAfter == "before":
             char.previous = aux.previous
             char.next = aux
-            aux.previous.next = char
+            if aux.previous:
+              aux.previous.next = char
+            else:
+              self.start = char
             aux.previous = char
           elif beforeOrAfter == "after":
             char.next = aux.next
