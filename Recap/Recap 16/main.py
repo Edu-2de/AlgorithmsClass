@@ -21,4 +21,17 @@ class MusicList:
   def __init__(self):
     self.start = None
     self.length = 0
+
+  def add(self, newMusic):
+    if self.start:
+      aux = self.start
+      while aux.next:
+        aux = aux.next
+      x = MusicNo(newMusic)
+      aux.next = x
+    else:
+      x = MusicNo(newMusic)
+      self.start = x
+    self.length += 1
+
   
