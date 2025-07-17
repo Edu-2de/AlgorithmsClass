@@ -14,8 +14,8 @@ class Music:
 class NoMusic:
     def __init__(self, music):
       self.music = music
-      self.proximo = None
-      self.anterior = None
+      self.next = None
+      self.previous = None
 
 class MusicList:
   def __init__(self):
