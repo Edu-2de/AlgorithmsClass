@@ -34,4 +34,18 @@ class MusicList:
       self.start = x
     self.length += 1
 
+  def removeByCode(self, code):
+    if self.start:
+      aux = self.start
+      codeFound = False
+      while aux.next and aux.next.music.code != code:
+        aux = aux.next
+        codeFound = True
+      if codeFound == True:
+        print(f'{aux.music} removed')
+        self.length -= 1
+      else:
+        print('This code not exist')
+    else:
+      print('The list is empty')
   
