@@ -17,7 +17,7 @@ class ListCharacter:
     self.length = 0
     self.cursor = None
 
-  def add(self, newCharacter):
+  def add(self, newCharacter, beforeOrAfter):
     if self.start:
       aux = self.start
       if self.cursor == aux:
