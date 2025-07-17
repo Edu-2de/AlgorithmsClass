@@ -37,22 +37,28 @@ class MusicList:
       self.start = x
       self.current = x
     self.length += 1
-    return newMusic
+    print(newMusic) 
 
   def removeByCode(self, code):
     if self.start:
       aux = self.start
-      codeFound = False
-      while aux.next and aux.next.music.code != code:
-        aux = aux.next
-        codeFound = True
-      if codeFound == True:
+      if aux.music.code == code:
+        self.start = aux.next
         self.length -= 1
-        return f'{aux.music} removed'
+        print(f'{aux.music.title} removed')
       else:
-        return 'This code not exist'
+        codeFound = False
+        while aux.next and aux.next.music.code != code:
+          aux = aux.next
+          codeFound = True
+        if codeFound == True:
+          aux = aux.next
+          self.length -= 1
+          print(f'{aux.music.title} removed') 
+        else:
+          print('This code not exist')
     else:
-      return 'The list is empty'
+      print('The list is empty')
 
   def searchByTitle(self, title):
     if self.start:
@@ -134,7 +140,7 @@ def menu():
       artist = input("Artist: ")
       duration = input("Duration(in seconds): ")
       newMusic = Music(title, artist, duration)
-      print(musics.add(newMusic))
+      musics.add(newMusic)
     elif choice == '2':
       code = input("Code: ")
       musics.removeByCode(code)
@@ -146,9 +152,9 @@ def menu():
       print('Type beginning or end')
       beginningOrEnd = input("Choice: ")
       if beginningOrEnd == "beginning":
-        print(musics.listByStart())
+        musics.listByStart()
       elif beginningOrEnd == "end":
-        print(musics.listByEnd())
+        musics.listByEnd()
       else:
         print("error, (you need type beginning or end)")
     elif choice == '5':
