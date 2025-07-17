@@ -22,10 +22,12 @@ class ListCharacter:
       aux = self.start
       if self.cursor == aux:
         char = CharacterNo(newCharacter)
-        aux = aux.next
-        self.start = char
-        char.next = aux
-        self.cursor = char
+        if beforeOrAfter == "before":
+          aux = aux.next
+          self.start = char
+          char.next = aux
+        elif beforeOrAfter == "after":
+        
       else:
         while aux and aux != self.cursor:
           aux = aux.next
