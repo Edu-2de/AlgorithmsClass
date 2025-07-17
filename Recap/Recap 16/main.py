@@ -80,6 +80,12 @@ class MusicList:
       while aux:
         print(aux.music)
         aux = aux.previous
+    else:
+      print('The list is empty')
 
+  def nextSong(self):
+    if self.start:
+      aux = self.start
+      
     else:
       print('The list is empty')
