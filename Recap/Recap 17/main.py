@@ -25,11 +25,17 @@ class ListCharacter:
         aux = aux.next
         self.start = char
         char.next = aux
+        self.cursor = char
+      else:
+        while aux and aux != self.cursor:
+          aux = aux.next
+        char = CharacterNo(newCharacter)
+        aux = aux.next
 
     else:
       char = CharacterNo(newCharacter)
       self.start = char
-      self.cursor = self.start
+      self.cursor = char
     self.length += 1
     print(newCharacter.value)
 
