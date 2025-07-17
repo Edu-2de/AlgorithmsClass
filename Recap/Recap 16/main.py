@@ -94,7 +94,7 @@ class MusicList:
     if self.start:
       if self.current and self.current.next:
         self.current = self.current.next
-        print(self.current.music)
+        print(f'{self.current.music.title} is playing now')
       else:
         print('There are no more songs to advance')
     else:
@@ -104,7 +104,7 @@ class MusicList:
     if self.start:
       if self.current and self.current.previous:
         self.current = self.current.previous
-        print(self.current.music)
+        print(f'{self.current.music.title} is playing now')
       else:
         print('There are no more songs to come back to')
     else:
@@ -152,9 +152,9 @@ def menu():
       else:
         print("error, (you need type beginning or end)")
     elif choice == '5':
+      musics.printCurrent()
       while True:
         try:
-          musics.printCurrent()
           choice = input("Do you want go to previous song or next song (p, n or exit)? ")
           if(choice == 'p'):
             musics.previousSong()
