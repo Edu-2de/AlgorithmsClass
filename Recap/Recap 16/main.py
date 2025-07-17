@@ -60,3 +60,9 @@ class MusicList:
         print('This music not exist')
     else:
       print('The list is empty')
+
+  def listByStart(self):
+    if self.start:
+
+    else:
+      print('The list is empty')
