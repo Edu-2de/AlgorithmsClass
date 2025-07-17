@@ -16,11 +16,13 @@ class MusicNo:
       self.music = music
       self.next = None
       self.previous = None
+      self.current = None
 
 class MusicList:
   def __init__(self):
     self.start = None
     self.length = 0
+ 
 
   def add(self, newMusic):
     if self.start:
@@ -28,10 +30,12 @@ class MusicList:
       while aux.next:
         aux = aux.next
       x = MusicNo(newMusic)
+      x.previous = aux
       aux.next = x
     else:
       x = MusicNo(newMusic)
       self.start = x
+      self.current = x
     self.length += 1
 
   def removeByCode(self, code):
@@ -85,11 +89,20 @@ class MusicList:
 
   def nextSong(self):
     if self.start:
-      aux = self.start
-      if aux.next:
-        aux = aux.next
-        print(aux.music)
+      if self.current and self.current.next:
+        self.current = self.current.next
+        print(self.current.music)
       else:
         print('There are no more songs to advance')
+    else:
+      print('The list is empty')
+
+  def previousSong(self):
+    if self.start:
+      if self.current and self.current.previous:
+        self.current = self.current.previous
+        print(self.current.music)
+      else:
+        print('There are no more songs to come back to')
     else:
       print('The list is empty')
