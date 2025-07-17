@@ -65,10 +65,21 @@ class MusicList:
     if self.start:
       aux = self.start
       count = 0
-      print("\n============= FILA =============\n")
       while (aux):
         count += 1
         print(  f"{count}. {aux.music.title} {aux.music.artist} {aux.music.duration}" )
         aux = aux.next
+    else:
+      print('The list is empty')
+
+  def listByEnd(self):
+    if self.start:
+      aux = self.start
+      while aux.next:
+        aux = aux.next
+      while aux:
+        print(aux.music)
+        aux = aux.previous
+
     else:
       print('The list is empty')
