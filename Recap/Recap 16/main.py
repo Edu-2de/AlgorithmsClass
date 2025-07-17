@@ -107,6 +107,12 @@ class MusicList:
     else:
       print('The list is empty')
 
+  def printCurrent(self):
+    if self.current:
+      print(f'{self.current} is playing')
+    else:
+      print("Nothing is playing")
+
 musics = MusicList()
 
 def menu():
@@ -143,7 +149,21 @@ def menu():
       else:
         print("error, (you need type beginning or end)")
     elif choice == '5':
-      
+      try:
+        print(musics.printCurrent)
+        choice = input("Do you want go to previous song or next song? (p, n or exit)")
+        if(choice == 'p'):
+          print(musics.previousSong)
+        elif(choice == 'n'):
+          print(musics.nextSong)
+        elif(choice == 'exit'):
+          break
+      except:
+        print('error')
+    elif choice == '6':
+      break
+
+
 
 
       
