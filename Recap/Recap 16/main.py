@@ -86,6 +86,10 @@ class MusicList:
   def nextSong(self):
     if self.start:
       aux = self.start
-      
+      if aux.next:
+        aux = aux.next
+        print(aux.music)
+      else:
+        print('There are no more songs to advance')
     else:
       print('The list is empty')
