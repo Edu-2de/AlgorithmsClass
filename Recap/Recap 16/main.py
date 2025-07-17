@@ -9,7 +9,7 @@ class Music:
     self.code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
 
   def __str__(self):
-    return f'Music {self.title}, from artist: {self.artist}, duration: {self.duration}'
+    return f'Music {self.title}, from artist: {self.artist}, duration: {self.duration}, code: {self.code}'
   
 class MusicNo:
     def __init__(self, music):
@@ -152,17 +152,18 @@ def menu():
       else:
         print("error, (you need type beginning or end)")
     elif choice == '5':
-      try:
-        musics.printCurrent()
-        choice = input("Do you want go to previous song or next song (p, n or exit)? ")
-        if(choice == 'p'):
-          print(musics.previousSong)
-        elif(choice == 'n'):
-          print(musics.nextSong)
-        elif(choice == 'exit'):
-          break
-      except:
-        print('error')
+      while True:
+        try:
+          musics.printCurrent()
+          choice = input("Do you want go to previous song or next song (p, n or exit)? ")
+          if(choice == 'p'):
+            musics.previousSong()
+          elif(choice == 'n'):
+            musics.nextSong()
+          elif(choice == 'exit'):
+            break
+        except:
+          print('error')
     elif choice == '6':
       break
 
