@@ -11,7 +11,7 @@ class Music:
   def __str__(self):
     return f'Music{self.title}, from artist: {self.artist}, duration: {self.duration}'
   
-class NoMusic:
+class MusicNo:
     def __init__(self, music):
       self.music = music
       self.next = None
