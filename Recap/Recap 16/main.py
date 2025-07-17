@@ -48,13 +48,13 @@ class MusicList:
         print(f'{aux.music.title} removed')
       else:
         codeFound = False
-        while aux.next and aux.next.music.code != code:
+        while aux and aux.music.code != code:
           aux = aux.next
           codeFound = True
         if codeFound == True:
+          print(f'{aux.music.title} removed') 
           aux = aux.next
           self.length -= 1
-          print(f'{aux.music.title} removed') 
         else:
           print('This code not exist')
     else:
