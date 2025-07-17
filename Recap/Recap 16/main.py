@@ -48,4 +48,15 @@ class MusicList:
         print('This code not exist')
     else:
       print('The list is empty')
-  
+
+  def searchByTitle(self, title):
+    if self.start:
+      aux = self.start
+      while aux.next and aux.next.music.title != title:
+        aux = aux.next
+      if aux != None:
+        print(aux.music)
+      else:
+        print('This music not exist')
+    else:
+      print('The list is empty')
