@@ -113,13 +113,25 @@ def menu():
   while True:
     print("\n============= MENU =============")
     print("1. Add a music to the end of the playlist.")
-    print("2. Remove a music by code. Search for a song by title.")
-    print("3. List all songs in the playlist")
-    print("4. Skip to the next song and skip to the previous one ")
-    print("5. exit")
+    print("2. Remove a music by code.")
+    print("3. Search for a song by title.")
+    print("4. List all songs in the playlist")
+    print("5. Skip to the next song and skip to the previous one ")
+    print("6. exit")
     print("================================")
     choice = input("Choice: ")
     if choice == '1':
-      title = input("")
-      artist = input("")
-      duration = input("")
+      title = input("Title: ")
+      artist = input("Artist: ")
+      duration = input("Duration(in seconds): ")
+      newMusic = Music(title, artist, duration)
+      musics.add(newMusic)
+      break
+    elif choice == '2':
+      code = input("Code: ")
+      musics.removeByCode(code)
+      break
+    elif choice
+
+
+      
