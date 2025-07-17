@@ -29,9 +29,12 @@ class ListCharacter:
       else:
         while aux and aux != self.cursor:
           aux = aux.next
-        char = CharacterNo(newCharacter)
-        aux = aux.next
-
+        if aux != None:
+          char = CharacterNo(newCharacter)
+          aux.previous.next = aux.next
+          if aux.next:
+            aux.next.previous = aux.previous
+          self.cursor = char
     else:
       char = CharacterNo(newCharacter)
       self.start = char
