@@ -27,16 +27,20 @@ class ListCharacter:
           self.start = char
           char.next = aux
         elif beforeOrAfter == "after":
-        
+          aux.next = char
+          char.previous = aux
       else:
         while aux and aux != self.cursor:
           aux = aux.next
         if aux != None:
           char = CharacterNo(newCharacter)
-          aux.previous.next = aux.next
-          if aux.next:
-            aux.next.previous = aux.previous
-          self.cursor = char
+          if beforeOrAfter == "before":
+            
+          elif beforeOrAfter == "after":
+            aux.previous.next = aux.next
+            if aux.next:
+              aux.next.previous = aux.previous
+
     else:
       char = CharacterNo(newCharacter)
       self.start = char
