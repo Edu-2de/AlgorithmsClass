@@ -16,3 +16,14 @@ class ListCharacter:
   def __init__(self):
     self.start = None
     self.length = 0
+
+  def add(self, newCharacter):
+    if self.start:
+      
+    else:
+      char = CharacterNo(newCharacter)
+      self.start = char
+      self.cursor = self.start
+    self.length += 1
+    print(newCharacter.value)
+
