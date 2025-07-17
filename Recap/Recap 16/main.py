@@ -9,7 +9,7 @@ class Music:
     self.code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
 
   def __str__(self):
-    return f'Music{self.title}, from artist: {self.artist}, duration: {self.duration}'
+    return f'Music {self.title}, from artist: {self.artist}, duration: {self.duration}'
   
 class MusicNo:
     def __init__(self, music):
@@ -37,6 +37,7 @@ class MusicList:
       self.start = x
       self.current = x
     self.length += 1
+    return newMusic
 
   def removeByCode(self, code):
     if self.start:
@@ -46,12 +47,12 @@ class MusicList:
         aux = aux.next
         codeFound = True
       if codeFound == True:
-        print(f'{aux.music} removed')
         self.length -= 1
+        return f'{aux.music} removed'
       else:
-        print('This code not exist')
+        return 'This code not exist'
     else:
-      print('The list is empty')
+      return 'The list is empty'
 
   def searchByTitle(self, title):
     if self.start:
@@ -59,11 +60,11 @@ class MusicList:
       while aux.next and aux.next.music.title != title:
         aux = aux.next
       if aux != None:
-        print(aux.music)
+        return aux.music
       else:
-        print('This music not exist')
+        return 'This music not exist'
     else:
-      print('The list is empty')
+      return 'The list is empty'
 
   def listByStart(self):
     if self.start:
@@ -71,7 +72,7 @@ class MusicList:
       count = 0
       while (aux):
         count += 1
-        print(  f"{count}. {aux.music.title} {aux.music.artist} {aux.music.duration}" )
+        print(f"{count}. {aux.music}")
         aux = aux.next
     else:
       print('The list is empty')
@@ -79,10 +80,12 @@ class MusicList:
   def listByEnd(self):
     if self.start:
       aux = self.start
+      count = 0
       while aux.next:
         aux = aux.next
       while aux:
-        print(aux.music)
+        count += 1
+        print(f"{count}. {aux.music}")
         aux = aux.previous
     else:
       print('The list is empty')
@@ -109,7 +112,7 @@ class MusicList:
 
   def printCurrent(self):
     if self.current:
-      print(f'{self.current} is playing')
+      print(f'{self.current.music} is playing')
     else:
       print("Nothing is playing")
 
@@ -163,7 +166,8 @@ def menu():
     elif choice == '6':
       break
 
-
+if __name__ == "__main__":
+  menu()
 
 
       
