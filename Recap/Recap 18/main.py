@@ -13,4 +13,9 @@ class PageNo():
     self.previous = None
 
 class ListPage():
-  def __init__(self)
+  def __init__(self):
+    self.start = None
+    self.actual = None
+    self.length = 0
+
+  def add(self, newPage)  
