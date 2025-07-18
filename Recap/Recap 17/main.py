@@ -73,9 +73,13 @@ class ListCharacter:
           else:
             print("Nothing to remove before cursor!")
         elif beforeOrAfter == "after":
-          removed = aux.next
-          removed.next = aux.next
-          removed.previous = aux
+          if aux.next:
+            removed = aux.next
+            if removed.next:
+              aux.next = removed.next
+            removed.previous = aux
+          else:
+            print("Nothing to remove after cursor!")
         self.length -=1
     else:
       print('The list is empty')
