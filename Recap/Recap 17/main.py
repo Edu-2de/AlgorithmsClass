@@ -27,11 +27,11 @@ class ListCharacter:
           char.next = aux
           aux.previous = char
         elif beforeOrAfter == "after":
+          char.next = aux.next
           aux.next = char
           if aux.next:
             aux.next.previous = char
           char.previous = aux
-        self.cursor = self.start
       else:
         while aux and aux != self.cursor:
           aux = aux.next
@@ -96,11 +96,13 @@ class ListCharacter:
       if aux != None:
         if beforeOrAfter == "before":
           if aux.previous:
+            self.cursor = None
             self.cursor = aux.previous
           else:
             print("Nothing before cursor!")
         elif beforeOrAfter == "after":
           if aux.next:
+            self.cursor = None
             self.cursor = aux.next
           else:
             print("Nothing after cursor!")
@@ -111,24 +113,9 @@ class ListCharacter:
   def listAllText(self):
     if self.start:
       aux = self.start
-      list = []
       while (aux):
-        list.append(aux.value)
+        print(aux.character.value, "|" if aux == self.cursor else "", end="")
         aux = aux.next
-      print(" ".join(list))
-    else:
-      print('The list is empty')
-
-  def showCursor(self):
-    if self.start:
-      aux = self.start
-      list = []
-      while (aux):
-        if aux == self.cursor:
-          aux.value = "|" + aux.value
-        list.append(aux.value)
-        aux = aux.next
-      print(" ".join(list))
     else:
       print('The list is empty')
 
@@ -147,13 +134,9 @@ def menu():
     if choice == "1":
       value = input("Type a character: ")
       char = Character(value)
-      list.add(char)
+      list.add(char, "after")
     elif choice == "2":
-      choice2 = input("Do you want remove before or after cursor? ")
-      if choice2 == "before":
-        list.remove("before")
-      elif choice2 == "after":
-        list.remove("after")
+      list.remove("before")
     elif choice == "3":
       list.moveCursor("before")
     elif choice == "4":
