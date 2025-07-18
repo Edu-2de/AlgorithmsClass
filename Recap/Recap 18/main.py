@@ -18,4 +18,13 @@ class ListPage():
     self.actual = None
     self.length = 0
 
-  def add(self, newPage)  
+  def add(self, newPage):
+    aux = self.start
+    page = PageNo(newPage)
+    if aux:
+      if aux.previous:
+        
+    else:
+      self.start = page
+      self.actual = page
+    self.length +=1
