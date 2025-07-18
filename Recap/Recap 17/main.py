@@ -78,6 +78,7 @@ class ListCharacter:
               self.cursor = None
             else:
               aux = None
+              self.start = None
               self.cursor = aux
             
         elif beforeOrAfter == "after":
@@ -105,7 +106,9 @@ class ListCharacter:
             self.cursor = None
             self.cursor = aux.previous
           else:
-            print("Nothing before cursor!")
+            self.start = None
+            self.start.next = aux
+            self.cursor = None
         elif beforeOrAfter == "after":
           if aux.next:
             self.cursor = None
@@ -145,10 +148,7 @@ def menu():
       char = Character(value)
       list.add(char, "after")
     elif choice == "2":
-      if list.returnLength() > 1:
-        list.remove("before")
-      else:
-        list.remove("after")
+      list.remove("before")
     elif choice == "3":
       list.moveCursor("before")
     elif choice == "4":
