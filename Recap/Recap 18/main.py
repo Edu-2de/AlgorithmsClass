@@ -22,8 +22,11 @@ class ListPage():
     aux = self.start
     page = PageNo(newPage)
     if aux:
-      if aux.previous:
+      while aux and aux != self.actual:
+        aux = aux.next
+      if aux != None:
         
+
     else:
       self.start = page
       self.actual = page
