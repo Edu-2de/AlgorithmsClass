@@ -108,4 +108,11 @@ class ListCharacter:
     else:
       print('The list is empty')
 
+  def listAllText(self):
+    if self.start:
+
+    else:
+      print('The list is empty')
+
+
 
