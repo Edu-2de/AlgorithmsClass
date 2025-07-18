@@ -70,14 +70,15 @@ class ListCharacter:
             self.cursor = removed.previous
             if removed.next:
               removed.next.previous = removed.previous
-              removed.previous.next = removed.next
+            else:
+              removed.previous.next = None
           else:
             if aux.next:
               self.start = aux.next
               self.cursor = None
             else:
-              self.start = None
-              self.cursor = None
+              aux = None
+              self.cursor = aux
             
         elif beforeOrAfter == "after":
           if aux.next:
