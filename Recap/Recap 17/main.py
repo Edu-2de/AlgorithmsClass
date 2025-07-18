@@ -31,6 +31,7 @@ class ListCharacter:
           if aux.next:
             aux.next.previous = char
           char.previous = aux
+        self.cursor = self.start
       else:
         while aux and aux != self.cursor:
           aux = aux.next
@@ -59,8 +60,25 @@ class ListCharacter:
 
   def remove(self, beforeOrAfter):
     if self.start:
-
+      aux = self.start
+      while aux and aux != self.cursor:
+        aux = aux.next
+      if aux != None:
+        if beforeOrAfter == "before":
+          if aux.previous:
+            removed = aux.previous
+            if removed.previous:
+            
+              removed.previous.next = aux
+            aux.previous = removed.previous
+          else:
+            print("Nothing to remove before cursor!")
+        elif beforeOrAfter == "after":
+          removed = aux.next
+          removed.next = aux.next
+          removed.previous = aux
+        self.length -=1
     else:
-      print('')
+      print('The list is empty')
 
 
