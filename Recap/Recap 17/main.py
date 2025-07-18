@@ -68,9 +68,8 @@ class ListCharacter:
           if aux.previous:
             removed = aux.previous
             if removed.previous:
-            
-              removed.previous.next = aux
-            aux.previous = removed.previous
+              aux.previous = removed.previous
+            removed.previous.next = aux
           else:
             print("Nothing to remove before cursor!")
         elif beforeOrAfter == "after":
