@@ -40,6 +40,7 @@ class ListCharacter:
             if aux.next:
               aux.next.previous = char
             char.previous = aux
+            self.cursor = char
         else:
           while aux and aux != self.cursor:
             aux = aux.next
@@ -59,6 +60,7 @@ class ListCharacter:
               if(aux.next):
                 aux.next.previous = char
               aux.next = char
+              self.cursor = char
     else:
       char = CharacterNo(newCharacter)
       self.start = char
