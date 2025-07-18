@@ -25,9 +25,10 @@ class ListPage():
       while aux and aux != self.actual:
         aux = aux.next
       if aux != None:
-        
-
+        aux.next = page
+        page.next = None
+        page.previous = aux
     else:
       self.start = page
-      self.actual = page
+    self.actual = page
     self.length +=1
