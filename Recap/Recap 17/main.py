@@ -55,5 +55,12 @@ class ListCharacter:
       self.start = char
       self.cursor = char
     self.length += 1
-    print(newCharacter.value)
+    print(f"{newCharacter.value} added")
+
+  def remove(self, beforeOrAfter):
+    if self.start:
+
+    else:
+      print('')
+
 
