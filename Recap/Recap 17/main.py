@@ -128,12 +128,16 @@ class ListCharacter:
 
   def listAllText(self):
     if self.start:
-      aux = self.start
-      while (aux):
-        print("|" if self.cursor == None else "", aux.character.value, "|" if aux == self.cursor else "", end="")
-        aux = aux.next
+        aux = self.start
+        if self.cursor is None:
+            print("|", end="")
+        while aux:
+            print(aux.character.value, end="")
+            if aux == self.cursor:
+                print("|", end="")
+            aux = aux.next
     else:
-      print('The list is empty')
+        print('The list is empty')
 
   def returnLength(self):
     return self.length
