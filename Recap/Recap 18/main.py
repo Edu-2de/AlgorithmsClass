@@ -48,3 +48,17 @@ class ListPage():
           print("No more pages to back")
     else:
       print("The list is empty")
+
+  def goToNextPage(self):
+    if self.start:
+      aux = self.start
+      while aux and aux != self.actual:
+        aux = aux.next
+      if aux != None:
+        if aux.next:
+          self.actual = aux.next
+          print(f"You are now in the page: {self.actual.page}")
+        else:
+          print("No more pages to go")
+    else:
+      print("The list is empty")
