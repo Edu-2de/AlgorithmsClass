@@ -88,4 +88,24 @@ class ListCharacter:
     else:
       print('The list is empty')
 
+  def moveCursor(self, beforeOrAfter):
+    if self.start:
+      aux = self.start
+      while aux and aux != self.cursor:
+        aux = aux.next
+      if aux != None:
+        if beforeOrAfter == "before":
+          if aux.previous:
+            self.cursor = aux.previous
+          else:
+            print("Nothing before cursor!")
+        elif beforeOrAfter == "after":
+          if aux.next:
+            self.cursor = aux.next
+          else:
+            print("Nothing before cursor!")
+        print(f"Cursor now is: {self.cursor}")
+    else:
+      print('The list is empty')
+
 
