@@ -6,6 +6,9 @@ class Page():
     self.title = title
     self.timestamp = None
 
+  def __str__(self):
+    return f"url:{self.url}, title:{self.title}, accessed in: {self.timestamp}"
+
 class PageNo():
   def __init__(self, page):
     self.page = page
