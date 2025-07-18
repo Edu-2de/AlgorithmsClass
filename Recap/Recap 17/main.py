@@ -68,11 +68,16 @@ class ListCharacter:
           removed = aux
           if removed.previous:
             self.cursor = removed.previous
-            removed.previous = removed.next
-            removed.previous.next = removed.next
-          if removed.next:
-            self.start = aux.next
-          self.cursor = None
+            if removed.next:
+              removed.next.previous = removed.previous
+              removed.previous.next = removed.next
+          else:
+            if aux.next:
+              self.start = aux.next
+              self.cursor = None
+            else:
+              self.start = None
+              self.cursor = None
             
         elif beforeOrAfter == "after":
           if aux.next:
@@ -119,6 +124,9 @@ class ListCharacter:
     else:
       print('The list is empty')
 
+  def returnLength(self):
+    return self.length
+
 list = ListCharacter()
 def menu():
   while True:
@@ -136,7 +144,10 @@ def menu():
       char = Character(value)
       list.add(char, "after")
     elif choice == "2":
-      list.remove("before")
+      if list.returnLength() > 1:
+        list.remove("before")
+      else:
+        list.remove("after")
     elif choice == "3":
       list.moveCursor("before")
     elif choice == "4":
