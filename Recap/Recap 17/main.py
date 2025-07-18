@@ -132,6 +132,41 @@ class ListCharacter:
     else:
       print('The list is empty')
 
+list = ListCharacter()
+def menu():
+  while True:
+    print("\n============= MENU =============")
+    print("1. Insert character")
+    print("2. Remove character")
+    print("3. Move cursor left")
+    print("4. Move cursor right")
+    print("5. Display text")
+    print("6. Exit")
+    print("================================")
+    choice = input("Choice: ")
+    if choice == "1":
+      value = input("Type a character: ")
+      char = Character(value)
+      list.add(char)
+    elif choice == "2":
+      choice2 = input("Do you want remove before or after cursor? ")
+      if choice2 == "before":
+        list.remove("before")
+      elif choice2 == "after":
+        list.remove("after")
+    elif choice == "3":
+      list.moveCursor("before")
+    elif choice == "4":
+      list.moveCursor("after")
+    elif choice == "5":
+      list.listAllText()
+    elif choice == "6":
+      break
+
+if __name__ == "__main__":
+  menu()
+
+
 
 
 
