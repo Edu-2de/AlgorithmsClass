@@ -66,7 +66,9 @@ class ListPage():
   def listAllHistory(self):
     if self.start:
       aux = self.start
+      count=0
       while(aux):
-        
+        count+=1
+        print(f"{count}. {aux.page}")
     else:
       print("The list is empty")
