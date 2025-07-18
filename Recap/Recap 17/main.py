@@ -20,37 +20,45 @@ class ListCharacter:
   def add(self, newCharacter, beforeOrAfter):
     if self.start:
       aux = self.start
-      if self.cursor == aux:
+      if self.start and self.cursor == None:
         char = CharacterNo(newCharacter)
-        if beforeOrAfter == "before":
-          self.start = char
-          char.next = aux
-          aux.previous = char
-        elif beforeOrAfter == "after":
-          char.next = aux.next
-          aux.next = char
-          if aux.next:
-            aux.next.previous = char
-          char.previous = aux
+        self.start = char
+        char.next = aux
+        aux.previous = char
+        self.cursor = None
+        self.cursor = char
       else:
-        while aux and aux != self.cursor:
-          aux = aux.next
-        if aux != None:
+        if self.cursor == aux:
           char = CharacterNo(newCharacter)
           if beforeOrAfter == "before":
-            char.previous = aux.previous
+            self.start = char
             char.next = aux
-            if aux.previous:
-              aux.previous.next = char
-            else:
-              self.start = char
             aux.previous = char
           elif beforeOrAfter == "after":
             char.next = aux.next
-            char.previous = aux
-            if(aux.next):
-              aux.next.previous = char
             aux.next = char
+            if aux.next:
+              aux.next.previous = char
+            char.previous = aux
+        else:
+          while aux and aux != self.cursor:
+            aux = aux.next
+          if aux != None:
+            char = CharacterNo(newCharacter)
+            if beforeOrAfter == "before":
+              char.previous = aux.previous
+              char.next = aux
+              if aux.previous:
+                aux.previous.next = char
+              else:
+                self.start = char
+              aux.previous = char
+            elif beforeOrAfter == "after":
+              char.next = aux.next
+              char.previous = aux
+              if(aux.next):
+                aux.next.previous = char
+              aux.next = char
     else:
       char = CharacterNo(newCharacter)
       self.start = char
@@ -106,8 +114,7 @@ class ListCharacter:
             self.cursor = None
             self.cursor = aux.previous
           else:
-            self.start = None
-            self.start.next = aux
+            self.start = aux
             self.cursor = None
         elif beforeOrAfter == "after":
           if aux.next:
