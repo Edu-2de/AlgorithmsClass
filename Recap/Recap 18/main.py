@@ -62,3 +62,6 @@ class ListPage():
           print("No more pages to go")
     else:
       print("The list is empty")
+
+  def listAllHistory(self):
+    
