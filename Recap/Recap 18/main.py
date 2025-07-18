@@ -64,4 +64,9 @@ class ListPage():
       print("The list is empty")
 
   def listAllHistory(self):
-    
+    if self.start:
+      aux = self.start
+      while(aux):
+        
+    else:
+      print("The list is empty")
