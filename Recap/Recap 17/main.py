@@ -113,11 +113,25 @@ class ListCharacter:
       aux = self.start
       list = []
       while (aux):
-        list.append(aux)
+        list.append(aux.value)
         aux = aux.next
       print(" ".join(list))
     else:
       print('The list is empty')
+
+  def showCursor(self):
+    if self.start:
+      aux = self.start
+      list = []
+      while (aux):
+        if aux == self.cursor:
+          aux.value = "|" + aux.value
+        list.append(aux.value)
+        aux = aux.next
+      print(" ".join(list))
+    else:
+      print('The list is empty')
+
 
 
 
