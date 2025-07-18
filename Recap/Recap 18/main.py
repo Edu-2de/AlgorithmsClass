@@ -19,9 +19,9 @@ class ListPage():
     self.length = 0
 
   def add(self, newPage):
-    aux = self.start
     page = PageNo(newPage)
-    if aux:
+    if self.start:
+      aux = self.start
       while aux and aux != self.actual:
         aux = aux.next
       if aux != None:
@@ -32,3 +32,19 @@ class ListPage():
       self.start = page
     self.actual = page
     self.length +=1
+    print(f"You are in the page: {self.actual.page}")
+    
+
+  def backToPreviousPage(self):
+    if self.start:
+      aux = self.start
+      while aux and aux != self.actual:
+        aux = aux.next
+      if aux != None:
+        if aux.previous:
+          self.actual = aux.previous
+          print(f"You are now in the page: {self.actual.page}")
+        else:
+          print("No more pages to back")
+    else:
+      print("The list is empty")
