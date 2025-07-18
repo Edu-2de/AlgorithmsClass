@@ -110,7 +110,12 @@ class ListCharacter:
 
   def listAllText(self):
     if self.start:
-
+      aux = self.start
+      list = []
+      while (aux):
+        list.append(aux)
+        aux = aux.next
+      print(" ".join(list))
     else:
       print('The list is empty')
 
