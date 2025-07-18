@@ -103,7 +103,7 @@ class ListCharacter:
           if aux.next:
             self.cursor = aux.next
           else:
-            print("Nothing before cursor!")
+            print("Nothing after cursor!")
         print(f"Cursor now is: {self.cursor}")
     else:
       print('The list is empty')
