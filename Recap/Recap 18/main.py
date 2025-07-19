@@ -85,7 +85,7 @@ class ListPage():
       if aux != None:
         print(aux.page)
       else:
-        print("This url or page is not in the list") 
+        print("This url or title not exists")
     else:
       print("The list is empty")
     
@@ -117,6 +117,9 @@ def menu():
       list.goToNextPage
     elif choice == "4":
       list.listAllHistory()
+    elif choice == "5":
+      titleOrUrl = input("Type url or title of the page: ")
+      list.searchPage(titleOrUrl)
     elif choice == "7":
       break
 
