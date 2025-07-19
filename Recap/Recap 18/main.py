@@ -124,8 +124,6 @@ class ListPage():
           aux.previous.next = aux.next
         else:
           aux = None
-        
-
       else:
         aux = self.start
         while aux and aux.page.url != urlOrTitle:
