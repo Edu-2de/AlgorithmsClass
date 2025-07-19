@@ -45,4 +45,19 @@ class ListTask():
       print(f"{noNewTask.task.show()} added")
     self.length += 1
       
+  def removeByTitle(self, titleProved):
+    if self.start:
+      aux = self.start
+      while aux and aux.task.title != titleProved:
+        aux = aux.next
+      if aux != None:
+        print(f"{aux.task} removed")
+        if aux == self.start:
+          if self.length == 1:
+            self.start = None
+          else:
+            self.start = aux.next
+        self.length -= 1
+    else:
+      print("The list is empty")
 
