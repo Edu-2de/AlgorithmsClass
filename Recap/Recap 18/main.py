@@ -1,10 +1,10 @@
 from datetime import datetime
 
 class Page():
-  def __init__(self, url:str = None, title:str = None):
+  def __init__(self, url:str = None, title:str = None, timestamp=None):
     self.url = url
     self.title = title
-    self.timestamp = None
+    self.timestamp = timestamp
 
   def __str__(self):
     return f"url:{self.url}, title:{self.title}, accessed in: {self.timestamp}"
@@ -76,7 +76,7 @@ class ListPage():
     else:
       print("The list is empty")
 
-
+list = ListPage()
 def menu():
   while True:
     print("\n============= MENU =============")
@@ -89,3 +89,8 @@ def menu():
     print("6. Exit")
     print("================================")
     choice = input("Choice: ")
+
+    if choice == "1":
+      url_page = input("What is the URL of the page?")
+      title = input("What is the name of the page?")
+      date = datetime.now()
