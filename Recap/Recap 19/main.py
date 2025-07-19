@@ -12,7 +12,7 @@ class SimpleTask(Task):
     super().__init__(title, description, priority),
 
   def show(self):
-    super().show()
+    return super().show()
 
 class DeadlineTask(Task):
   def __init__(self, title:str = None, description:str = None, priority:int = 0, deadline:str = None):
@@ -37,7 +37,7 @@ class ListTask():
     noNewTask = NoTask(newTask)
     if self.start:
       aux = self.start
-      while aux:
+      while aux.next:
         aux = aux.next
       aux.next = noNewTask
     else:
