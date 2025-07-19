@@ -110,3 +110,5 @@ def menu():
     elif choice == '7':
       break
  
+if __name__ == "__main__":
+  menu()
