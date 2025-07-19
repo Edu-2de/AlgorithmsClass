@@ -109,11 +109,15 @@ class ListPage():
           else:
             self.actual = None
         print(f"{aux.page} deleted")
-        print(f"New actual is {self.actual.page}")
+        if self.actual != None:
+          print(f"New actual is {self.actual.page}")
+        else:
+          print("Actual is None")
         if aux == self.start:
           self.start = None
-        aux.previous = aux.next
-        aux.next = aux.previous
+        aux.previous.next = aux.next
+        if aux.next:
+          aux.next.previous = aux.previous
 
       else:
         aux = self.start
@@ -128,11 +132,15 @@ class ListPage():
             else:
               self.actual = None
           print(f"{aux.page} deleted")
-          print(f"New actual is {self.actual.page}")
+          if self.actual != None:
+            print(f"New actual is {self.actual.page}")
+          else:
+            print("Actual is None")
           if aux == self.start:
             self.start = None
-          aux.previous = aux.next
-          aux.next = aux.previous
+          aux.previous.next = aux.next
+          if aux.next:
+            aux.next.previous = aux.previous
         else:
           print("This url or title not exists")
     else:
