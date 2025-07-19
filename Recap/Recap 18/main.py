@@ -73,6 +73,7 @@ class ListPage():
       while(aux):
         count+=1
         print(f"{count}. {aux.page}")
+        aux = aux.next
     else:
       print("The list is empty")
 
