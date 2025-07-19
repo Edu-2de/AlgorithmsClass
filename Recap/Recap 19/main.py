@@ -89,5 +89,6 @@ def menu():
     print("7. Exit")
     print("================================")
     choice = input("Choice: ")
-    
+    if choice == '1':
+      title = input("Task title: ")
 
