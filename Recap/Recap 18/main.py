@@ -95,7 +95,8 @@ def menu():
       url_page = input("What is the URL of the page?")
       title = input("What is the name of the page?")
       date = datetime.now()
-      new_page = Page(url_page, title, date)
+      formate = date.strftime("%d/%m/%Y %H:%M")
+      new_page = Page(url_page, title, formate)
       list.add(new_page)
     elif choice == "2":
       list.backToPreviousPage()
