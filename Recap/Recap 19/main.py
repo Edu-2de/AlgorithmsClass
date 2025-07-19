@@ -28,5 +28,18 @@ class NoTask():
     self.next = None
     self.previous = None
 
-  
+class ListTask():
+  def __init__(self):
+    self.start = None
+    self.length = 0
+
+  def add(self, newTask):
+    noNewTask = NoTask(newTask)
+    if self.start:
+      aux = self.start
+    else:
+      self.start = noNewTask
+      print(f"{noNewTask.task.show()} added")
+    self.length += 1
+      
 
