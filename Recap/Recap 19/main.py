@@ -103,5 +103,6 @@ def menu():
       task = DeadlineTask(title, description, priority, deadline)
       list.add(task)
     elif choice == '3':
-      
-
+      titleProved = input("Task title:")
+      list.removeByTitle(titleProved)
+ 
