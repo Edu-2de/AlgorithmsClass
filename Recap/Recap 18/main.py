@@ -85,8 +85,8 @@ def menu():
     print("3. Forward")
     print("4. List history")
     print("5. Search page")
-    print("5. Remove page")
-    print("6. Exit")
+    print("6. Remove page")
+    print("7. Exit")
     print("================================")
     choice = input("Choice: ")
 
@@ -94,3 +94,16 @@ def menu():
       url_page = input("What is the URL of the page?")
       title = input("What is the name of the page?")
       date = datetime.now()
+      new_page = Page(url_page, title, date)
+      list.add(new_page)
+    elif choice == "2":
+      list.backToPreviousPage()
+    elif choice == "3":
+      list.goToNextPage
+    elif choice == "4":
+      list.listAllHistory()
+    elif choice == "7":
+      break
+
+if __name__ == "__main__":
+  menu()
