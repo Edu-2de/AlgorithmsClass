@@ -65,4 +65,29 @@ class ListTask():
             aux.previous.next = aux.next
     else:
       print("The list is empty")
+  
+  def listAllTasks(self):
+    if self.start:
+      aux = self.start
+      while(aux):
+        print(aux.task.show())
+        aux = aux.next
+    else:
+      print("The list is empty")
+
+list = ListTask()
+
+def menu():
+  while True:
+    print("\n============= MENU =============")
+    print("1. Add a simple task")
+    print("2. Add a task with a deadline")
+    print("3. Remove a task")
+    print("4. List tasks")
+    print("5. Search for tasks")
+    print("6. List by priority")
+    print("7. Exit")
+    print("================================")
+    choice = input("Choice: ")
+    
 
