@@ -107,5 +107,6 @@ def menu():
       list.removeByTitle(titleProved)
     elif choice == '4':
       list.listAllTasks()
-    
+    elif choice == '7':
+      break
  
