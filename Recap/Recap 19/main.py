@@ -52,12 +52,17 @@ class ListTask():
         aux = aux.next
       if aux != None:
         print(f"{aux.task} removed")
+        self.length -= 1
         if aux == self.start:
           if self.length == 1:
             self.start = None
           else:
             self.start = aux.next
-        self.length -= 1
+        else:
+          if aux.next:
+            aux.next.previous = aux.previous
+          else:
+            aux.previous.next = aux.next
     else:
       print("The list is empty")
 
