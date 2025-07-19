@@ -80,12 +80,18 @@ class ListPage():
   def searchPage(self, urlOrTitle):
     if self.start:
       aux = self.start
-      while aux and aux.page.title != urlOrTitle or aux.page.url != urlOrTitle:
+      while aux and aux.page.title != urlOrTitle:
         aux = aux.next
       if aux != None:
         print(aux.page)
       else:
-        print("This url or title not exists")
+        aux = self.start
+        while aux and aux.page.url != urlOrTitle:
+          aux = aux.next
+        if aux != None:
+          print(aux.page)
+        else:
+          print("This url or title not exists")
     else:
       print("The list is empty")
     
