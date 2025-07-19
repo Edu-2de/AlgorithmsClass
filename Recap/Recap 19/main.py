@@ -96,5 +96,12 @@ def menu():
       task = SimpleTask(title, description, priority)
       list.add(task)
     elif choice == '2':
+      title = input("Task title: ")
+      description = input("Description: ")
+      priority = input("Priority (0 - 10): ")
+      deadline = input("Deadline: ")
+      task = DeadlineTask(title, description, priority, deadline)
+      list.add(task)
+    elif choice == '3':
       
 
