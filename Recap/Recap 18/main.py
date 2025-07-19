@@ -75,3 +75,17 @@ class ListPage():
         print(f"{count}. {aux.page}")
     else:
       print("The list is empty")
+
+
+def menu():
+  while True:
+    print("\n============= MENU =============")
+    print("1. Go to new page")
+    print("2. Back")
+    print("3. Forward")
+    print("4. List history")
+    print("5. Search page")
+    print("5. Remove page")
+    print("6. Exit")
+    print("================================")
+    choice = input("Choice: ")
