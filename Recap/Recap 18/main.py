@@ -101,13 +101,31 @@ class ListPage():
       while aux and aux.page.title != urlOrTitle:
         aux = aux.next
       if aux != None:
-        print(aux.page)
+        if aux == self.actual:
+          if aux.next:
+            self.actual = aux.next
+          elif aux.previous:
+            self.actual = aux.previous
+          else:
+            self.actual = None
+        aux.previous.next = aux.next
+        aux.next.previous = aux.previous
+
       else:
         aux = self.start
         while aux and aux.page.url != urlOrTitle:
           aux = aux.next
         if aux != None:
-          print(aux.page)
+          if aux == self.actual:
+            if aux.next:
+              self.actual = aux.next
+            elif aux.previous:
+              self.actual = aux.previous
+            else:
+              self.actual = None
+          aux.previous.next = aux.next
+          aux.next.previous = aux.previous
+          print(f"{aux.page} deleted")
         else:
           print("This url or title not exists")
     else:
