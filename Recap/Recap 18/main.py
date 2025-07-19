@@ -114,10 +114,17 @@ class ListPage():
         else:
           print("Actual is None")
         if aux == self.start:
-          self.start = None
-        aux.previous.next = aux.next
+          if aux.next:
+            self.start = aux.next
+          else:
+            self.start = None
         if aux.next:
           aux.next.previous = aux.previous
+        elif aux.previous:
+          aux.previous.next = aux.next
+        else:
+          aux = None
+        
 
       else:
         aux = self.start
@@ -137,10 +144,16 @@ class ListPage():
           else:
             print("Actual is None")
           if aux == self.start:
-            self.start = None
-          aux.previous.next = aux.next
+            if aux.next:
+              self.start = aux.next
+            else:
+              self.start = None
           if aux.next:
             aux.next.previous = aux.previous
+          elif aux.previous:
+            aux.previous.next = aux.next
+          else:
+            aux = None
         else:
           print("This url or title not exists")
     else:
