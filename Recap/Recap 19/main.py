@@ -37,6 +37,9 @@ class ListTask():
     noNewTask = NoTask(newTask)
     if self.start:
       aux = self.start
+      while aux:
+        aux = aux.next
+      aux.next = noNewTask
     else:
       self.start = noNewTask
       print(f"{noNewTask.task.show()} added")
