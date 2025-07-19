@@ -94,6 +94,24 @@ class ListPage():
           print("This url or title not exists")
     else:
       print("The list is empty")
+
+  def removePage(self, urlOrTitle):
+    if self.start:
+      aux = self.start
+      while aux and aux.page.title != urlOrTitle:
+        aux = aux.next
+      if aux != None:
+        print(aux.page)
+      else:
+        aux = self.start
+        while aux and aux.page.url != urlOrTitle:
+          aux = aux.next
+        if aux != None:
+          print(aux.page)
+        else:
+          print("This url or title not exists")
+    else:
+      print("The list is empty")
     
 
 list = ListPage()
