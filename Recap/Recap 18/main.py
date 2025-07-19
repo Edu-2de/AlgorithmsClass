@@ -77,6 +77,19 @@ class ListPage():
     else:
       print("The list is empty")
 
+  def searchPage(self, urlOrTitle):
+    if self.start:
+      aux = self.start
+      while aux and aux.page.title != urlOrTitle or aux.page.url != urlOrTitle:
+        aux = aux.next
+      if aux != None:
+        print(aux.page)
+      else:
+        print("This url or page is not in the list") 
+    else:
+      print("The list is empty")
+    
+
 list = ListPage()
 def menu():
   while True:
