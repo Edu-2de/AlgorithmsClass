@@ -108,8 +108,9 @@ class ListPage():
             self.actual = aux.previous
           else:
             self.actual = None
-        aux.previous.next = aux.next
-        aux.next.previous = aux.previous
+        if aux.next:
+          aux.previous.next = aux.next
+        aux = None
         print(f"{aux.page} deleted")
         print(f"New actual is {self.actual.page}")
 
@@ -125,8 +126,9 @@ class ListPage():
               self.actual = aux.previous
             else:
               self.actual = None
-          aux.previous.next = aux.next
-          aux.next.previous = aux.previous
+          if aux.next:
+            aux.previous.next = aux.next
+          aux = None
           print(f"{aux.page} deleted")
           print(f"New actual is {self.actual.page}")
         else:
@@ -165,6 +167,9 @@ def menu():
     elif choice == "5":
       titleOrUrl = input("Type url or title of the page: ")
       list.searchPage(titleOrUrl)
+    elif choice == "6":
+      titleOrUrl = input("Type url or title of the page: ")
+      list.removePage(titleOrUrl)
     elif choice == "7":
       break
 
