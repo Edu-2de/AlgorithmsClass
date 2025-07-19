@@ -105,4 +105,7 @@ def menu():
     elif choice == '3':
       titleProved = input("Task title:")
       list.removeByTitle(titleProved)
+    elif choice == '4':
+      list.listAllTasks()
+    
  
