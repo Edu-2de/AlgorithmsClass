@@ -91,4 +91,10 @@ def menu():
     choice = input("Choice: ")
     if choice == '1':
       title = input("Task title: ")
+      description = input("Description: ")
+      priority = input("Priority (0 - 10): ")
+      task = SimpleTask(title, description, priority)
+      list.add(task)
+    elif choice == '2':
+      
 
