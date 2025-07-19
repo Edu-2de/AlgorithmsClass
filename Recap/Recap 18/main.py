@@ -110,6 +110,8 @@ class ListPage():
             self.actual = None
         aux.previous.next = aux.next
         aux.next.previous = aux.previous
+        print(f"{aux.page} deleted")
+        print(f"New actual is {self.actual.page}")
 
       else:
         aux = self.start
@@ -126,6 +128,7 @@ class ListPage():
           aux.previous.next = aux.next
           aux.next.previous = aux.previous
           print(f"{aux.page} deleted")
+          print(f"New actual is {self.actual.page}")
         else:
           print("This url or title not exists")
     else:
