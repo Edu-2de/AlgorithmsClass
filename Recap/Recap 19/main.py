@@ -133,6 +133,9 @@ def menu():
       list.removeByTitle(titleProved)
     elif choice == '4':
       list.listAllTasks()
+    elif choice == '5':
+      title = input('Type the title of task: ')
+      list.searchTask()
     elif choice == '6':
       list.tasksByPriority()
     elif choice == '7':
