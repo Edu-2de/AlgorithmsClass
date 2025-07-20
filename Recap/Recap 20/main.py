@@ -39,8 +39,10 @@ class BookList():
     noNewBook = BookNo(newBook)
     if self.start:
       aux = self.start
-      
+      while aux.next:
+        aux = aux.next
+      aux.next = noNewBook
     else:
       self.start = noNewBook
-      print(f"{self.start.book} added")
+    print(f"{noNewBook.book} added")
     self.length += 1
