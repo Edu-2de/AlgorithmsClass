@@ -8,10 +8,14 @@ class Book():
   def __str__(self):
     return f"{self.title} - {self.author} - {self.year} - {self.available}"
   
-class BookPhysical():
-  def __init__(self, title:str = None, author:str = None, year:int = 0000):
+class BookPhysical(Book):
+  def __init__(self, title:str = None, author:str = None, year:int = 0000, location:str = None):
     super().__init__(title, author, year)
-    
+    self.location = location
+
+  def __str__(self):
+    return f"{super().__str__()} - {self.location}"
+
   
 class BookNo():
   def __init__(self, book):
