@@ -5,5 +5,6 @@ class Book():
     self.year = year
     self.available = True
 
-  
+  def __str__(self):
+    return f"{self.title} - {self.author} - {self.year} - {self.available}"
  
