@@ -84,7 +84,7 @@ class ListTask():
         aux = aux.next
       auxList.sort(key=lambda t: t.task.priority, reverse=True)
       for i in auxList:
-        print(i)
+        print(i.task.show())
     else:
       print("The list is empty")
 
