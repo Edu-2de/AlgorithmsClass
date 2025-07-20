@@ -75,6 +75,13 @@ class ListTask():
     else:
       print("The list is empty")
 
+  def searchTask(self):
+    if self.start:
+      
+    else:
+      print("The list is empty")
+
+
   def tasksByPriority(self):
     if self.start:
       aux = self.start
