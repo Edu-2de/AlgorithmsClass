@@ -18,6 +18,12 @@ class BookPhysical(Book):
   
 class BookDigital(Book):
   def __init__(self, title:str = None, author:str = None, year:int = 0000, url_download:str = None):
+    super().__init__(title, author, year)
+    self.url_download = url_download
+
+  def __str__(self):
+    return f"{super().__str__()} - {self.url_download}"
+
 
   
 class BookNo():
