@@ -82,7 +82,7 @@ class ListTask():
       while(aux):
         auxList.append(aux)
         aux = aux.next
-      auxList.sort(key=lambda t: t.priority, reverse=True)
+      auxList.sort(key=lambda t: t.task.priority, reverse=True)
       for i in auxList:
         print(i)
     else:
