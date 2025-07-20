@@ -15,6 +15,9 @@ class BookPhysical(Book):
 
   def __str__(self):
     return f"{super().__str__()} - {self.location}"
+  
+class BookDigital(Book):
+  def __init__(self, title:str = None, author:str = None, year:int = 0000, url_download:str = None):
 
   
 class BookNo():
