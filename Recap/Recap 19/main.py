@@ -81,7 +81,9 @@ class ListTask():
       while aux and aux.task.title != searchTitle:
         aux = aux.next
       if aux != None:
-        
+        print(aux.task.show())
+      else:
+        print("This task not exist")
     else:
       print("The list is empty")
 
