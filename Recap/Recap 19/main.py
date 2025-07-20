@@ -75,9 +75,13 @@ class ListTask():
     else:
       print("The list is empty")
 
-  def searchTask(self):
+  def searchTask(self, searchTitle):
     if self.start:
-      
+      aux = self.start
+      while aux and aux.task.title != searchTitle:
+        aux = aux.next
+      if aux != None:
+        
     else:
       print("The list is empty")
 
