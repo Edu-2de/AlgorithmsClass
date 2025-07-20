@@ -78,9 +78,13 @@ class ListTask():
   def tasksByPriority(self):
     if self.start:
       aux = self.start
+      auxList = []
       while(aux):
-        print(aux.task.show())
+        auxList.append(aux)
         aux = aux.next
+      auxList.sort(key=lambda t: t.priority, reverse=True)
+      for i in auxList:
+        print(i)
     else:
       print("The list is empty")
 
@@ -116,6 +120,8 @@ def menu():
       list.removeByTitle(titleProved)
     elif choice == '4':
       list.listAllTasks()
+    elif choice == '6':
+      list.tasksByPriority()
     elif choice == '7':
       break
  
