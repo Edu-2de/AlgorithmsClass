@@ -7,4 +7,10 @@ class Book():
 
   def __str__(self):
     return f"{self.title} - {self.author} - {self.year} - {self.available}"
+  
+class BookNo():
+  def __init__(self, book):
+    self.book = book
+    self.next = None
+    self.previous = None
  
