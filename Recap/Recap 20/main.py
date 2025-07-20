@@ -46,3 +46,9 @@ class BookList():
       self.start = noNewBook
     print(f"{noNewBook.book} added")
     self.length += 1
+
+  def removeBook(self, title):
+    if self.start:
+    
+    else:
+      print('The list is empty')
