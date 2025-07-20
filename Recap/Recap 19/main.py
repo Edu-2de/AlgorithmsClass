@@ -75,6 +75,15 @@ class ListTask():
     else:
       print("The list is empty")
 
+  def tasksByPriority(self):
+    if self.start:
+      aux = self.start
+      while(aux):
+        print(aux.task.show())
+        aux = aux.next
+    else:
+      print("The list is empty")
+
 list = ListTask()
 
 def menu():
