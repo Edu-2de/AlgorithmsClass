@@ -23,8 +23,6 @@ class BookDigital(Book):
 
   def __str__(self):
     return f"{super().__str__()} - {self.url_download}"
-
-
   
 class BookNo():
   def __init__(self, book):
@@ -36,3 +34,13 @@ class BookList():
   def __init__(self):
     self.start = None
     self.length = 0
+
+  def addBook(self, newBook):
+    noNewBook = BookNo(newBook)
+    if self.start:
+      aux = self.start
+      
+    else:
+      self.start = noNewBook
+      print(f"{self.start.book} added")
+    self.length += 1
