@@ -95,7 +95,12 @@ class BookList():
   def returnBook(self, bookReturn):
     if self.start:
       aux = self.start
+      while aux and aux.book.title != bookReturn:
+        aux = aux.next
+      if aux != None:
       
+      else:
+        "This book not exist"
     else:
       print("The list is empty")
 
