@@ -167,4 +167,17 @@ def menu():
     elif choice == '3':
       title = input("Title of book you want remove: ")
       list.removeBook(title)
+    elif choice == '4':
+      list.listAllBooks()
+    elif choice == '5':
+      titleOrAuthor = input("Type the author or the title of the book: ")
+      list.searchBook(titleOrAuthor)
+    elif choice == '6':
+      list.listAvailableBooks()
+    elif choice == '7':
+      title = input("Type the title of book that you want loan: ")
+      list.loanBook(title)
+    elif choice == '8':
+      title = input("Type the title of book that you want return: ")
+      list.loanBook(title)
 
