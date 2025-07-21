@@ -49,6 +49,10 @@ class BookList():
 
   def removeBook(self, title):
     if self.start:
-    
+      aux = self.start
+      while aux and aux.book.title != title:
+        aux = aux.next
+      if aux != None:
+        aux 
     else:
       print('The list is empty')
