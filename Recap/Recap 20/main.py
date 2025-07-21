@@ -76,7 +76,7 @@ class BookList():
     else:
       print('The list is empty')
 
-  def loan(self, bookLoan):
+  def loanBook(self, bookLoan):
     if self.start:
       aux = self.start
       while aux and aux.book.title != bookLoan:
@@ -91,3 +91,11 @@ class BookList():
         print("This book not exist")
     else:
       print("The list is empty")
+
+  def returnBook(self, bookReturn):
+    if self.start:
+      aux = self.start
+      
+    else:
+      print("The list is empty")
+
