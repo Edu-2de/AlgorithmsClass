@@ -98,7 +98,11 @@ class BookList():
       while aux and aux.book.title != bookReturn:
         aux = aux.next
       if aux != None:
-      
+        if aux.book.available == False:
+          print("You return the book")
+          aux.book.available = True
+        else:
+          print("The book has already been returned")
       else:
         "This book not exist"
     else:
