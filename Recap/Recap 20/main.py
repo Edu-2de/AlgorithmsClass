@@ -70,8 +70,10 @@ class BookList():
   def listAllBooks(self):
     if self.start:
       aux = self.start
+      count = 0
       while aux:
-        print(aux.book)
+        count += 1
+        print(f"{count}. book: {aux.book}")
         aux = aux.next
     else:
       print('The list is empty')
@@ -97,8 +99,10 @@ class BookList():
   def listAvailableBooks(self):
     if self.start:
       aux = self.start
+      count = 0
       while aux and aux.book.available == True:
-        print(aux.book)
+        count += 1
+        print(f"{count}. available book: {aux.book}")
         aux = aux.next
     else:
       print("The list is empty")
@@ -179,5 +183,11 @@ def menu():
       list.loanBook(title)
     elif choice == '8':
       title = input("Type the title of book that you want return: ")
-      list.loanBook(title)
+      list.returnBook(title)
+    elif choice == '9':
+      break
+
+
+if __name__ == '__main__':
+  menu()
 
