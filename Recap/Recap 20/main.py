@@ -149,4 +149,22 @@ def menu():
     print("8. Return book")
     print("9. Exit")
     print("================================")
+    choice = input("Choice: ")
+    if choice == '1':
+      title = input("Title: ")
+      author = input("Author: ")
+      year = input("Year: ")
+      location = input("Location: ")
+      newBook = BookPhysical(title, author, year, location)
+      list.addBook(newBook)
+    elif choice == '2':
+      title = input("Title: ")
+      author = input("Author: ")
+      year = input("Year: ")
+      url_download = input("Url download: ")
+      newBook = BookPhysical(title, author, year, url_download)
+      list.addBook(newBook)
+    elif choice == '3':
+      title = input("Title of book you want remove: ")
+      list.removeBook(title)
 
