@@ -94,6 +94,15 @@ class BookList():
     else:
       print("The list is empty")
 
+  def listAvailableBooks(self):
+    if self.start:
+      aux = self.start
+      while aux and aux.book.available == True:
+        print(aux.book)
+        aux = aux.next
+    else:
+      print("The list is empty")
+
   def loanBook(self, bookLoan):
     if self.start:
       aux = self.start
