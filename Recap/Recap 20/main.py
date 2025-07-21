@@ -53,6 +53,8 @@ class BookList():
       while aux and aux.book.title != title:
         aux = aux.next
       if aux != None:
+        self.length -= 1
+        print(f"{aux.book} removed")
         if aux == self.start:
           if aux.next:
             self.start = aux.next
@@ -62,7 +64,5 @@ class BookList():
           aux.previous.next = aux.next
           if aux.next:
             aux.next.previous = aux.previous
-        self.length -= 1
-        print(f"{aux.book} removed")
     else:
       print('The list is empty')
