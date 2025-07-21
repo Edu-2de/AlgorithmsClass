@@ -66,3 +66,9 @@ class BookList():
             aux.next.previous = aux.previous
     else:
       print('The list is empty')
+
+  def listAllBooks(self):
+    if self.start:
+    
+    else:
+      print('The list is empty')
