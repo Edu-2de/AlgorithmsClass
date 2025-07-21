@@ -69,6 +69,25 @@ class BookList():
 
   def listAllBooks(self):
     if self.start:
-    
+      aux = self.start
+      while aux:
+        print(aux.book)
+        aux = aux.next
     else:
       print('The list is empty')
+
+  def loan(self, bookLoan):
+    if self.start:
+      aux = self.start
+      while aux and aux.book.title != bookLoan:
+        aux = aux.next
+      if aux != None:
+        if aux.book.available == True:
+          print("You took the book")
+          aux.book.available = False
+        else:
+          print("This book is not available")
+      else:
+        print("This book not exist")
+    else:
+      print("The list is empty")
